@@ -1,0 +1,127 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+iconfont Webfont
+*/
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot?1654868417840");
+  src: url("../fonts/iconfont.eot?#iefix-1654868417840") format("embedded-opentype"), url("../fonts/iconfont.woff2?1654868417840") format("woff2"), url("../fonts/iconfont.woff?1654868417840") format("woff"), url("../fonts/iconfont.ttf?1654868417840") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^=icon-]::before,
+[class*=" icon-"]::before {
+  font-family: "iconfont";
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  font-size: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+Glyphs list
+*/
+.icon-airport::before {
+  content: "\ea01";
+}
+
+.icon-bicycle::before {
+  content: "\ea02";
+}
+
+.icon-car::before {
+  content: "\ea03";
+}
+
+.icon-dog-park::before {
+  content: "\ea04";
+}
+
+.icon-ferry::before {
+  content: "\ea05";
+}
+
+.icon-park::before {
+  content: "\ea06";
+}
+
+.icon-restaurant::before {
+  content: "\ea07";
+}
+
+.icon-rocket::before {
+  content: "\ea08";
+}
+
+.icon-toilets::before {
+  content: "\ea09";
+}
+
+.icon-zoo::before {
+  content: "\ea0a";
+}
