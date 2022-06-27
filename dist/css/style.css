@@ -56,6 +56,136 @@ table {
           box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Sora";
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.container {
+  max-width: 1130px;
+  padding: 0 20px;
+  margin-inline: auto;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora-Regular.eot");
+  src: url("../fonts/Sora-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Sora-Regular.woff2") format("woff2"), url("../fonts/Sora-Regular.woff") format("woff"), url("../fonts/Sora-Regular.ttf") format("truetype"), url("../fonts/Sora-Regular.svg#Sora-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SoraMedium";
+  src: url("../fonts/Sora-Medium.eot");
+  src: url("../fonts/Sora-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Sora-Medium.woff2") format("woff2"), url("../fonts/Sora-Medium.woff") format("woff"), url("../fonts/Sora-Medium.ttf") format("truetype"), url("../fonts/Sora-Medium.svg#Sora-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SoraBold";
+  src: url("../fonts/Sora-Bold.eot");
+  src: url("../fonts/Sora-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Sora-Bold.woff2") format("woff2"), url("../fonts/Sora-Bold.woff") format("woff"), url("../fonts/Sora-Bold.ttf") format("truetype"), url("../fonts/Sora-Bold.svg#Sora-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 14px 14px transparent;
+          box-shadow: inset 0 0 14px 14px transparent;
+  border: solid 3px transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(147, 147, 147);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(179, 179, 179);
+}
+
+.header {
+  background-color: #67BDFF;
+}
+.header .header__container {
+  padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+
+.header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.header__list::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  width: 60px;
+  height: 3px;
+  background-color: #fff;
+}
+.header__list::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  width: 60px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.header__link,
+.header__list:visited {
+  color: #17183B;
+  padding: 0 30px;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+@media (min-width: 1140px) {
+  .header__link:hover,
+.header__list:visited:hover {
+    color: #FFE554;
+  }
+}
+
 /**
 iconfont Webfont
 */
@@ -74,7 +204,6 @@ iconfont Webfont
   line-height: 1;
   font-weight: normal;
   font-style: normal;
-  speak: none;
   text-decoration: inherit;
   font-size: inherit;
   text-transform: none;
@@ -88,40 +217,4 @@ Glyphs list
 */
 .icon-airport::before {
   content: "\ea01";
-}
-
-.icon-bicycle::before {
-  content: "\ea02";
-}
-
-.icon-car::before {
-  content: "\ea03";
-}
-
-.icon-dog-park::before {
-  content: "\ea04";
-}
-
-.icon-ferry::before {
-  content: "\ea05";
-}
-
-.icon-park::before {
-  content: "\ea06";
-}
-
-.icon-restaurant::before {
-  content: "\ea07";
-}
-
-.icon-rocket::before {
-  content: "\ea08";
-}
-
-.icon-toilets::before {
-  content: "\ea09";
-}
-
-.icon-zoo::before {
-  content: "\ea0a";
 }

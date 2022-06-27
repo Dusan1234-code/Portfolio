@@ -1,0 +1,51 @@
+.header {
+    background-color: $myBlue;
+    .header__container {
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+}
+
+.header__list {
+    display: flex;
+    position: relative;
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateX(-100%);
+        width: 60px;
+        height: 3px;
+        background-color: $myWhite;
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateX(100%);
+        width: 60px;
+        height: 3px;
+        background-color: $myWhite;
+    }
+}
+
+.header__link,
+.header__list:visited {
+    color: $myCadet;
+    padding: 0 30px;
+    transition: color .4s ease;
+    &:hover {
+        @include desktop {
+            color: $myYellow;
+        }
+    }
+}
