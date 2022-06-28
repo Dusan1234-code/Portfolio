@@ -1,12 +1,16 @@
 @import 'base/reset';
 @import 'base/general';
 
-@import 'abstracts/mixin';
 @import 'abstracts/variables';
 @import 'abstracts/fonts';
+@import 'abstracts/mixin';
 @import 'abstracts/scrollbar';
+@import 'abstracts/hamburger';
 
 @import 'layout/header';
+@import 'layout/main';
+@import 'layout/about';
+@import 'layout/contact';
 @import 'layout/footer';
 
 @import 'icon-font/iconfont';

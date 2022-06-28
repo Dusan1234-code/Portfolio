@@ -1,0 +1,48 @@
+.contact__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .contact__text {
+        width: 60%;
+        line-height: 2;
+        color: $myGray;
+        text-align: center;
+        padding: 20px;
+        background-color: rgba($myLightGray, $alpha: 0.4);
+        border-radius: 25px;
+    }
+}
+
+.contact__btn,
+.contact__btn:visited {
+    border-radius: 10px;
+    padding: 15px 32px;
+    background-color: $myYellow;
+    cursor: pointer;
+    font-family: $soraBold;
+    font-size: 18px;
+    color: $myGray; 
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: opacity 0.4s ease;
+    &:hover {
+        @include desktop {
+            opacity: 0.7;
+        }
+    }
+}
+
+.contact__social {
+    .contact__link,
+    .contact:visited,
+    .contact:active {
+        font-size: 60px;
+        color: $myGray;
+        margin-right: 20px;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

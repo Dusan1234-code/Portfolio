@@ -1,0 +1,49 @@
+.about {
+    padding-bottom: 40px;
+}
+
+.about__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    @include mobile {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.about__img-wrapper {
+    flex-basis: 50%;
+    position: relative;
+    &::after {
+        content: "Madeira, Portugal";
+        position: absolute;
+        text-align: center;
+        top: 98%;
+        width: 220px;
+        right: 1%;
+        padding: 0 40px;
+        transform: translateY(-100%);
+        color: $myWhite;
+        font-size: 13px;
+        border-radius: 20px;
+        border-start-end-radius: 0;
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 2px );
+        border: 1px solid $myLightGray;
+    }
+    .about__img {
+        height: 400px;
+        border-radius: 20px;
+    }
+}
+
+.about__text-wrapper {
+    flex-basis: 50%;
+    @include mobile {
+        font-size: 16px;
+    }
+}
+
+

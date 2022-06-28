@@ -1,51 +1,82 @@
 .header {
     background-color: $myBlue;
     .header__container {
-        padding: 15px 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         gap: 30px;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
-    
+}
+.active .header__nav {
+    right: 0;
+}
+
+.header__nav {
+    @include tablet {
+        transition: right .8s ease;
+        padding: 40px 0;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        z-index: 100;
+        height: 100%;
+        width: 60%;
+        background-color: $myWhite;
+        @include mobile {
+            width: 100%;
+            padding: 35px 0;
+        }
+    }
 }
 
 .header__list {
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    @include tablet {
+        flex-direction: column;
+        gap: 30px;
+    }
     &::before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateX(-100%);
-        width: 60px;
-        height: 3px;
-        background-color: $myWhite;
+        @include desktop {
+            @include headerLineLeft;
+        }
     }
     &::after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateX(100%);
-        width: 60px;
-        height: 3px;
-        background-color: $myWhite;
+        @include desktop {
+            @include headerLineRight;
+        }
     }
 }
 
 .header__link,
 .header__list:visited {
-    color: $myCadet;
+    color: $myWhite;
+    text-transform: lowercase;
     padding: 0 30px;
     transition: color .4s ease;
+    @include tablet {
+        color: $myGray;
+    }
     &:hover {
         @include desktop {
             color: $myYellow;
         }
+    }
+}
+
+.header__hamburger {
+    display: none;
+    @include tablet {
+        z-index: 100;
+        display: inline-block;
     }
 }

@@ -1,13 +1,81 @@
 @import "abstracts/variables";
+@import "abstracts/mixin";
 
-body {
+html {
+    scroll-behavior: smooth;
+}
+
+.body {
     font-family: $sora;
     font-size: 18px;
     line-height: 1.3;
+    background-color: $myWhite;
+    &.body--scrollDisabled {
+        overflow: hidden;
+    }
+}
+
+.body.body--scrollDisabled .main-page {
+    filter: blur(7px);
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .container {
     max-width: 1130px;
     padding: 0 20px;
     margin-inline: auto;
+}
+
+.btn,
+.btn:visited {
+    padding: 15px 32px;
+    background-color: $myBlue;
+    font-family: $soraBold;
+    color: $myWhite;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform .4s ease-out;
+    &:hover{
+        @include desktop {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.section-heading {
+    font-size: 46px;
+    font-family: $soraBold;
+    color: $myGray;
+    margin-bottom: 44px;
+    text-transform: lowercase;
+    &::after {
+        @include blueSquare;
+    }
+    @include tablet {
+        font-size: 42px;
+    }
+    @include mobile {
+        font-size: 38px;
+    }
+}
+
+.section-subheading {
+    font-family: $soraMedium;
+    font-size: 30px;
+    color: $myBlue;
+    margin-bottom: 30px;
 }

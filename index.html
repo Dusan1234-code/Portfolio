@@ -4,36 +4,92 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Dusan Gacesa | Home</title>
+	<title>Dusan Gacesa | Welcome</title>
 	<link href="./favicon.ico" rel="icon">
 	<link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-	<header class="header">
+<body class="body js-body">
+	<header class="header js-header">
 		<div class="header__container container">
-			<div class="logo">LOGO</div>
+			<div class="logo">
+				<p>LOGO</p>
+			</div>
 			<nav class="header__nav"> 
 				<ul class="header__list">
 					<li class="header__item">
-						<a href="#" class="header__link">Home</a>
+						<a href="#main" class="header__link js-header-link">Home</a>
 					</li>
 					<li class="header__item">
-						<a href="#" class="header__link">About me</a>
+						<a href="#about" class="header__link js-header-link">About me</a>
 					</li>
 					<li class="header__item">
-						<a href="#" class="header__link">Education</a>
+						<a href="#" class="header__link js-header-link">Education</a>
 					</li>
 					<li class="header__item">
-						<a href="#" class="header__link">Projects</a>
+						<a href="#" class="header__link js-header-link">Projects</a>
 					</li>
 					<li class="header__item">
-						<a href="#" class="header__link">Contact</a>
+						<a href="#" class="header__link js-header-link">Contact</a>
 					</li>
 				</ul>
 			</nav>
+			<button class="header__hamburger js-hamburger">
+				<span class="header__bar">
+					<span class="sr-only">Opens up nav on tablet version</span>
+				</span>
+			</button>
 		</div>
 	</header>
-	<main></main>
+	<main class="main-page">
+		<section class="main">
+			<div class="main__container container">
+				<h1 class="main__heading">Hello, 
+					<span class="main__space">l'm Dusan Gacesa</span>
+					<span class="main__space">and l'm</span>
+					<span class="job js-job"><span class="rs-only">Showing Frontend developer as my job</span></span>
+				</h1>
+				<div class="main__content">
+					<img src="./images/mainPicture.jpg" alt="Picture of me" class="main__picture">
+					<a href="CV.pdf" download="DusanGacesaCV" class="main__btn btn">Download CV</a>
+				</div>
+			</div>
+		</section>
+		<section class="about" id="about">
+			<div class="about__container container">
+				<h2 class="about__heading section-heading">About me</h2>
+				<div class="about__content">
+					<div class="about__img-wrapper">
+						<img src="./images/madeira.jpg" alt="Madeira island, Portugal" class="about__img">
+					</div>
+					<div class="about__text-wrapper">
+						<p class="about__text">
+							Born on Madeira island in Portugal and lived there for 7 years where l finished first grade and spoke very fluent Portuguese. After that, me and my family are returning to Serbia where l started my development.</p>
+						<p class="about__text">
+							I'm a detail-oriented person with good communication skills. As a semi-professional football player, l have become a great team player and learned the importance of discipline, dedication, and hard work. A very curious person, always looking to learn about new things. At this moment, my priority is to expand my knowledge about JavaScript and write clean code.. </p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="contact">
+			<div class="contact__container container">
+				<h2 class="contact__heading section-heading">Contact</h2>
+				<h3 class="contact__subheading section-subheading">Get in touch</h3>
+				<div class="contact__content">
+					<p class="contact__text">My inbox is always open. Whether you have a question or just want to say hi, I will try my best to get back to you!</p>
+					<a href="mailto:dusangacesa727@gmail.com" class="contact__btn">Say Hello<span class="icon-mail"><span class="sr-only">Mail icon</span></span></a>
+				</div>
+				<h3 class="contact__subheading section-subheading">Social</h3>
+				<div class="contact__social">
+					<a href="https://www.linkedin.com/in/dusan-gacesa/" target="_blank" class="contact__link">
+						<span class="icon-linkedin contact__icon"></span>
+					</a>
+					<a href="https://github.com/Dusan1234-code" target="_blank" class="contact__link">
+						<span class="icon-github contact__icon"></span>
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
 	<footer></footer>
 	<script src="./js/main.js"></script>
 </body>

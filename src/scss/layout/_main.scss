@@ -1,0 +1,63 @@
+.main {
+    background-color: $myWhite;
+    padding: 60px 0;
+    @include mobile {
+        padding: 20px 0;
+    }
+    .main__container {
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+        }
+    }
+}
+
+.main__content {
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+}
+
+.main__heading {
+    color: $myGray;
+    font-size: 52px;
+    @include tablet {
+        font-size: 40px;
+    }
+    @include mobile {
+        font-size: 34px;
+    }
+    .main__space {
+        display: block;
+    }
+}
+
+.job {
+    font-weight: bold;
+    color: $myBlue;
+}
+
+.main__picture {
+    height: 300px;
+    border-radius: 0% 100% 26% 74% / 59% 53% 47% 41% ;
+}
+
+.body.body--scrollDisabled .end {
+    animation: none;
+}
+
+.end {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

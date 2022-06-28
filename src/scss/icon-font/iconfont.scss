@@ -3,11 +3,11 @@ iconfont Webfont
 */
 @font-face {
 	font-family: 'iconfont';
-	src: url('../fonts/iconfont.eot?1654868417840');
-	src: url('../fonts/iconfont.eot?#iefix-1654868417840') format('embedded-opentype'),
-		url('../fonts/iconfont.woff2?1654868417840') format('woff2'),
-		url('../fonts/iconfont.woff?1654868417840') format('woff'),
-		url('../fonts/iconfont.ttf?1654868417840') format('truetype');
+	src: url('../fonts/iconfont.eot?1656436938919');
+	src: url('../fonts/iconfont.eot?#iefix-1656436938919') format('embedded-opentype'),
+		url('../fonts/iconfont.woff2?1656436938919') format('woff2'),
+		url('../fonts/iconfont.woff?1656436938919') format('woff'),
+		url('../fonts/iconfont.ttf?1656436938919') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -20,6 +20,7 @@ iconfont Webfont
 	line-height: 1;
 	font-weight: normal;
 	font-style: normal;
+	speak: none;
 	text-decoration: inherit;
 	font-size: inherit;
 	text-transform: none;
@@ -32,7 +33,14 @@ iconfont Webfont
 Glyphs list
 */
 
-.icon-airport::before {
+.icon-github::before {
 	content: '\ea01';
 }
 
+.icon-linkedin::before {
+	content: '\ea02';
+}
+
+.icon-mail::before {
+	content: '\ea03';
+}

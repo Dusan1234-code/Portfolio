@@ -1,0 +1,46 @@
+.header__hamburger {
+    cursor: pointer;
+    padding:30px 20px;
+    display: inline-block;
+}
+
+.header__hamburger .header__bar {
+    background-color: $myBlack;
+    height: 3px;
+    width: 32px;
+    display: block;
+    position: relative;
+    transition: all ease 0.1s;
+}
+
+.header__hamburger .header__bar:after, 
+.header__hamburger .header__bar:before {
+    background: $myBlack;
+    height: 3px;
+    width: 32px;
+    display: block;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 7px;
+    transition:all ease 0.2s;
+}
+
+.header__hamburger .header__bar:before {
+top: -7px;
+}
+
+// OPENS UP
+.active .header__hamburger .header__bar {
+	background: transparent;
+}
+
+.active .header__hamburger .header__bar:before {
+	transform:rotate(-45deg);
+	top:0;
+}
+.active .header__hamburger .header__bar:after {
+	transform:rotate(45deg);
+	top:0;
+}
+  
