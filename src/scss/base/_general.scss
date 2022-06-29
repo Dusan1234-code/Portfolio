@@ -35,11 +35,12 @@ img {
     padding: 15px 32px;
     background-color: $myBlue;
     font-family: $soraBold;
+    display: inline-block;
     color: $myWhite;
     border-radius: 25px;
     cursor: pointer;
     font-size: 18px;
-    transition: transform .4s ease-out;
+    transition: transform 0.4s ease-out;
     &:hover{
         @include desktop {
             transform: scale(1.1);
@@ -74,8 +75,41 @@ img {
 }
 
 .section-subheading {
-    font-family: $soraMedium;
-    font-size: 30px;
+    font-size: 36px;
     color: $myBlue;
     margin-bottom: 30px;
+    font-family: $soraBold;
+    text-transform: lowercase;
+}
+
+
+.arrow.arrow-visible {
+    display: block;
+}
+
+.arrow {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px 20px;
+    border-radius: 100% 0% 100% 0% / 58% 100% 0% 42% ;
+    background-color: $myBlue;
+    cursor: pointer;
+    @include mobile {
+        padding: 5px 10px;
+    }
+}
+.arrow__up {
+    border: solid $myWhite;
+    border-width: 0 8px 8px 0;
+    display: inline-block;
+    padding: 8px;
+    background-color: $myBlue;
+    transform: rotate(-135deg);
+    margin-top: 20px;
+    @include mobile {
+        border-width: 0 4px 4px 0;
+        padding: 4px;
+    }
 }

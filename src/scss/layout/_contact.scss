@@ -38,6 +38,7 @@
     .contact__link,
     .contact:visited,
     .contact:active {
+        display: inline-block;
         font-size: 60px;
         color: $myGray;
         margin-right: 20px;

@@ -1,0 +1,79 @@
+.development__content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 20px;
+    @include mobile {
+        flex-direction: column;
+    }
+    .development__wrapper:first-child {
+        flex-basis: 45%;
+    }
+    .development__wrapper:last-child {
+        flex-basis: 55%;
+    }
+}
+
+
+
+.developemnt__box {
+    padding-bottom: 45px;
+    padding-left: 25px;
+    .development__box-subheading {
+        font-size: 30px;
+        font-family: $soraBold;
+        margin-bottom: 5px;
+        color: $myGray;
+        @include tablet {
+            font-size: 26px;
+        }
+    }
+    .development__box-college {
+        font-size: 20px;
+        color: $myLightDarkGray;
+        display: block;
+        font-family: $soraBold;
+        @include tablet {
+            font-size: 18px;
+        }
+    }
+    .development__box-city {
+        color: $myLightGray;
+        margin-bottom: 5px;
+    }
+}
+
+.timeline {
+    position: relative;
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 3px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $myBlue;
+    }
+}
+
+.circle {
+    position: relative;
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-150%);
+        width: 25px;
+        height: 25px;
+        background-color: $myWhite;
+        border-radius: 50%;
+        border: 5px solid $myBlue;
+        z-index: 100;
+    }
+}
+
+

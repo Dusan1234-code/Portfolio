@@ -3,8 +3,7 @@ let header = document.querySelector(".js-header");
 let message = document.querySelector(".js-job");
 let body = document.querySelector(".js-body");
 let navLinks = document.querySelectorAll(".js-header-link");
-var tablet = window.matchMedia("(max-width: 1140px)");
-
+let arrowToTop = document.querySelector(".js-arrow");
 // HAMBURGER MENU OPENS UP/CLOSES
 hamburger.addEventListener("click",()=>{
     header.classList.toggle("active");
@@ -32,4 +31,23 @@ typeWritter = () => {
 }
 window.addEventListener("load",()=> typeWritter());
 
-// SEND MAIL
+// ARROW TO TOP
+arrowToTop.addEventListener("click",()=>{
+    window.scrollTo(0,0);
+})
+let about = document.getElementById("about");
+
+
+const observer = new IntersectionObserver(entries =>{
+    console.log(entries[0]);
+    if(entries[0].isIntersecting) {
+        arrowToTop.classList.add("arrow-visible")
+    } 
+},{
+    rootMargin:"0px",
+    root: null,
+    threshold: 1.0
+});
+
+observer.observe(about);
+
