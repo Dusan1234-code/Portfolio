@@ -40,12 +40,6 @@ img {
     border-radius: 25px;
     cursor: pointer;
     font-size: 18px;
-    transition: transform 0.4s ease-out;
-    &:hover{
-        @include desktop {
-            transform: scale(1.1);
-        }
-    }
 }
 
 .sr-only {
@@ -96,6 +90,7 @@ img {
     border-radius: 100% 0% 100% 0% / 58% 100% 0% 42% ;
     background-color: $myBlue;
     cursor: pointer;
+    animation: moveInScreen 1s;
     @include mobile {
         padding: 5px 10px;
     }

@@ -43,6 +43,20 @@
     color: $myBlue;
 }
 
+.main__btn {
+    transition: all 0.4s ease-out;
+    &:hover{
+        @include desktop {
+            transform: translateX(-10px);
+            box-shadow: 0 5px 10px rgba(#000000, 0.6);
+        }
+    }
+}
+
+.main__btn:active {
+    transform: translateX(10px);
+}
+
 .main__picture {
     height: 300px;
     border-radius: 0% 100% 26% 74% / 59% 53% 47% 41% ;

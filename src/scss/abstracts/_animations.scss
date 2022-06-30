@@ -1,0 +1,13 @@
+@keyframes moveInScreen {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
