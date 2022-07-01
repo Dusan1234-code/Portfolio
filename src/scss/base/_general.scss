@@ -91,10 +91,25 @@ img {
     background-color: $myBlue;
     cursor: pointer;
     animation: moveInScreen 1s;
+    transition: all .4s ease;
+    &:hover:after {
+        @include desktop {
+            content: "Back to top?";
+            display: block;
+            color: $myGray;
+            width: 70%;
+            margin-inline: auto;
+            font-family: $soraBold;
+            font-size: 14px;
+            font-style: italic;
+            animation: backToTop 0.4s;
+        }
+    }
     @include mobile {
         padding: 5px 10px;
     }
 }
+
 .arrow__up {
     border: solid $myWhite;
     border-width: 0 8px 8px 0;
@@ -103,6 +118,7 @@ img {
     background-color: $myBlue;
     transform: rotate(-135deg);
     margin-top: 20px;
+
     @include mobile {
         border-width: 0 4px 4px 0;
         padding: 4px;
