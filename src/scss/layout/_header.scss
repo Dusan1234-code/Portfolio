@@ -13,6 +13,10 @@
             flex-direction: row;
             justify-content: space-between;
         }
+        @include mobile {
+            padding-top: 10px;
+            padding-bottom: 15px;
+        }
     }
 }
 .active .header__nav {

@@ -38,10 +38,29 @@
         }
     }
     .development__box-city {
+        display: inline-block;
         color: $myLightGray;
         margin-bottom: 5px;
     }
+    .development__box-text {
+        line-height: 1.7;
+    }
 }
+
+.development__item {
+    line-height: 1.7;
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        vertical-align: middle;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-color: $myBlue;
+    }
+}
+
 
 .timeline {
     position: relative;
@@ -66,7 +85,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        transform: translate(-150%);
+        transform: translateX(-150%);
         width: 25px;
         height: 25px;
         background-color: $myWhite;

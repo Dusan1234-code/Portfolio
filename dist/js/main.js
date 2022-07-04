@@ -4,6 +4,18 @@ let message = document.querySelector(".js-job");
 let body = document.querySelector(".js-body");
 let navLinks = document.querySelectorAll(".js-header-link");
 let arrowToTop = document.querySelector(".js-arrow");
+let gmailBtn = document.querySelector(".js-gmail");
+let main = document.querySelector(".js-main");
+
+ // COPY MAIL
+gmailBtn.addEventListener("click",()=> {
+    navigator.clipboard.writeText("dusangacesa727@gmail.com");
+    gmailBtn.classList.add("copingMail");
+    setTimeout(() => {
+        gmailBtn.classList.remove("copingMail")
+    }, 2100);
+})
+
 // HAMBURGER MENU OPENS UP/CLOSES
 hamburger.addEventListener("click",()=>{
     header.classList.toggle("active");
@@ -19,14 +31,13 @@ navLinks.forEach((link)=>{
     })
 })
 
-// TypeWriting main
+// WRITTING ANIMATION
 let messageArray = ["Frontened developer"];
 let textPosition = 0;
-let speed = 100;
 typeWritter = () => {
-    message.innerHTML = messageArray[0].substring(0, textPosition) + `<span class="end">\u25ae</span>`;
+    message.innerHTML = messageArray[0].substring(0, textPosition) + `<span class="blink"></span>`;
     if(textPosition ++ != messageArray[0].length) {
-        setTimeout(typeWritter,speed)
+        setTimeout(typeWritter, 100)
     }
 }
 window.addEventListener("load",()=> typeWritter());
@@ -35,19 +46,18 @@ window.addEventListener("load",()=> typeWritter());
 arrowToTop.addEventListener("click",()=>{
     window.scrollTo(0,0);
 })
-let about = document.getElementById("about");
 
-
-const observer = new IntersectionObserver(entries =>{
-    console.log(entries[0]);
-    if(entries[0].isIntersecting) {
-        arrowToTop.classList.add("arrow-visible")
-    } 
-},{
-    rootMargin:"0px",
+const observer = new IntersectionObserver(function(entries){
+    const ent = entries[0];
+    if(!ent.isIntersecting) {
+        arrowToTop.classList.add("arrow-visible");
+    }
+    if(ent.isIntersecting) {
+        arrowToTop.classList.remove("arrow-visible");
+    }
+}, {
     root: null,
-    threshold: 1.0
-});
-
-observer.observe(about);
+    threshold: 0
+})
+observer.observe(main);
 

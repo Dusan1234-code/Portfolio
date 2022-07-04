@@ -45,7 +45,42 @@
         color: $myGray;
         margin-right: 20px;
         &:hover {
-            opacity: 0.6;
+            @include desktop {
+                opacity: 0.6;
+            }
         }
+        @include mobile {
+            font-size: 35px;
+        }
+    }
+}
+
+.gmail {
+    position: relative;
+    animation: show .5s;
+    animation-fill-mode: backwards;
+    &.copingMail::before {
+        content: "Copied my mail";
+        display: block;
+        position: absolute;
+        top: 0;
+        transform: translateY(-70%);
+        width: max-content;
+        font-size: 14px;
+        background-color: $myBlue;
+        color: $myWhite;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    &.copingMail::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: solid $myBlue;
+        border-width: 0 5px 5px 0;
+        padding: 2px;
+        top: 0;
+        transform: rotate(45deg) translateY(100%);
     }
 }

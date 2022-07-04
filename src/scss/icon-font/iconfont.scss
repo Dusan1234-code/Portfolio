@@ -3,11 +3,11 @@ iconfont Webfont
 */
 @font-face {
 	font-family: 'iconfont';
-	src: url('../fonts/iconfont.eot?1656436938919');
-	src: url('../fonts/iconfont.eot?#iefix-1656436938919') format('embedded-opentype'),
-		url('../fonts/iconfont.woff2?1656436938919') format('woff2'),
-		url('../fonts/iconfont.woff?1656436938919') format('woff'),
-		url('../fonts/iconfont.ttf?1656436938919') format('truetype');
+	src: url('../fonts/iconfont.eot?1656952529580');
+	src: url('../fonts/iconfont.eot?#iefix-1656952529580') format('embedded-opentype'),
+		url('../fonts/iconfont.woff2?1656952529580') format('woff2'),
+		url('../fonts/iconfont.woff?1656952529580') format('woff'),
+		url('../fonts/iconfont.ttf?1656952529580') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -37,10 +37,14 @@ Glyphs list
 	content: '\ea01';
 }
 
-.icon-linkedin::before {
+.icon-gmail::before {
 	content: '\ea02';
 }
 
-.icon-mail::before {
+.icon-linkedin::before {
 	content: '\ea03';
+}
+
+.icon-mail::before {
+	content: '\ea04';
 }

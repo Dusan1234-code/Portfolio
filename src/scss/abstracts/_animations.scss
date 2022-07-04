@@ -62,3 +62,22 @@
         height: 3px;
     }
 }
+
+@keyframes show {
+    10% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
