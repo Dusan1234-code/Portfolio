@@ -1,16 +1,29 @@
+.contact {
+    padding-bottom: 60px;
+}
 .contact__content {
-    margin-top: -40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    position: relative;
+    .contact__img {
+        width: 300px;
+        height: 300px;
+        padding-right: 10px;
+        position: absolute;
+        top: -3%;
+        left: 15%;
+        z-index: -1;
+    }
     .contact__text {
-        width: 60%;
+        width: 70%;
         line-height: 2;
         color: $myGray;
+        border: 4px solid $myBlack;
         text-align: center;
         padding: 20px;
-        background-color: rgba($myLightGray, $alpha: 0.4);
+        background-color: rgba($myWhite, $alpha: .9);
         border-radius: 25px;
     }
 }
@@ -19,7 +32,7 @@
 .contact__btn:visited {
     border-radius: 10px;
     padding: 15px 32px;
-    background-color: $myYellow;
+    background-color: transparent;
     cursor: pointer;
     font-family: $soraBold;
     font-size: 18px;
@@ -28,12 +41,22 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    transition: all 0.4s ease;
-    &:hover {
-        @include desktop {
-            border-radius: 50%;
-            padding: 15px;
-        }
+    position: relative;
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        border-radius: 10px;
+        background-color: $myYellow;
+        transition: .4s;
+    }
+    &:hover::before {
+        width: 100%;
     }
 }
 
@@ -44,9 +67,10 @@
         font-size: 60px;
         color: $myGray;
         margin-right: 20px;
-        &:hover {
+        transition: all .3s;
+        &:hover:not(:last-child) {
             @include desktop {
-                opacity: 0.6;
+                transform: scale(1.1) rotate(20deg);
             }
         }
         @include mobile {

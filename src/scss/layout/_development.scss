@@ -1,3 +1,7 @@
+.development {
+    padding-bottom: 60px;
+}
+
 .development__content {
     display: flex;
     flex-direction: row-reverse;
@@ -14,10 +18,11 @@
     }
 }
 
-
+.developemnt__box:not(:last-child) {
+    padding-bottom: 40px;
+}
 
 .developemnt__box {
-    padding-bottom: 45px;
     padding-left: 25px;
     .development__box-subheading {
         font-size: 30px;
@@ -41,6 +46,7 @@
         display: inline-block;
         color: $myLightGray;
         margin-bottom: 5px;
+        font-size: 16px;
     }
     .development__box-text {
         line-height: 1.7;
@@ -48,17 +54,7 @@
 }
 
 .development__item {
-    line-height: 1.7;
-    &::before {
-        content: "";
-        display: inline-block;
-        width: 8px;
-        vertical-align: middle;
-        height: 8px;
-        border-radius: 50%;
-        margin-right: 10px;
-        background-color: $myBlue;
-    }
+    line-height: 2;
 }
 
 

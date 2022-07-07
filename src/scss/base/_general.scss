@@ -80,7 +80,6 @@ html {
 
 .arrow.arrow-visible {
     display: block;
-    transition: all .4s ease;
 }
 
 .arrow {
@@ -92,18 +91,16 @@ html {
     border-radius: 100% 0% 100% 0% / 58% 100% 0% 42% ;
     background-color: $myBlue;
     cursor: pointer;
-    transition: 1s;
     animation: moveInScreen 1s;
-    animation-fill-mode: forwards;
-    &:hover:after {
+    &:hover::after {
         @include desktop {
             content: "Back to top?";
             display: block;
             color: $myGray;
-            width: 70%;
-            margin-inline: auto;
             font-family: $soraBold;
             font-size: 14px;
+            width: 70%;
+            margin-inline: auto;
             font-style: italic;
             animation: backToTop 0.4s;
         }

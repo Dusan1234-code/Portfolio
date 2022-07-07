@@ -7,6 +7,27 @@ let arrowToTop = document.querySelector(".js-arrow");
 let gmailBtn = document.querySelector(".js-gmail");
 let main = document.querySelector(".js-main");
 
+
+const productContainers = [...document.querySelectorAll('.project__wrapper')];
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+
+
+// CAROUSEL 
+productContainers.forEach((item,i) => {
+    let containerDimension = item.getBoundingClientRect();
+    let containerWidth = containerDimension.width;
+  
+  
+    prev.addEventListener("click",() => {
+      item.scrollLeft -= containerWidth;
+    })
+
+    next.addEventListener("click",() => {
+        item.scrollLeft += containerWidth;
+      })
+  })
+
  // COPY MAIL
 gmailBtn.addEventListener("click",()=> {
     navigator.clipboard.writeText("dusangacesa727@gmail.com");
@@ -46,7 +67,6 @@ window.addEventListener("load",()=> typeWritter());
 arrowToTop.addEventListener("click",()=>{
     window.scrollTo(0,0);
 })
-
 const observer = new IntersectionObserver(function(entries){
     const ent = entries[0];
     if(!ent.isIntersecting) {
