@@ -1,6 +1,11 @@
 @import "abstracts/variables";
 @import "abstracts/mixin";
 
+::selection {
+    background: $myBlue;
+    color: $myWhite;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -77,7 +82,6 @@ html {
     }
 }
 
-
 .arrow.arrow-visible {
     display: block;
 }
@@ -92,17 +96,20 @@ html {
     background-color: $myBlue;
     cursor: pointer;
     animation: moveInScreen 1s;
+    &::after {
+        content: "Back to top?";
+        display: none;
+        color: $myGray;
+        font-family: $soraBold;
+        font-size: 14px;
+        width: 70%;
+        margin-inline: auto;
+        font-style: italic;
+        animation: backToTop 0.4s;
+    }
     &:hover::after {
         @include desktop {
-            content: "Back to top?";
             display: block;
-            color: $myGray;
-            font-family: $soraBold;
-            font-size: 14px;
-            width: 70%;
-            margin-inline: auto;
-            font-style: italic;
-            animation: backToTop 0.4s;
         }
     }
     @include mobile {

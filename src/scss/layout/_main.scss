@@ -69,8 +69,12 @@
 }
 
 .main__picture {
-    height: 300px;
-    border-radius: 0% 100% 26% 74% / 59% 53% 47% 41% ;
+    width: 70%;
+    height: 400px;
+    border-radius: 0% 100% 26% 74% / 67% 4% 96% 33%;
+    animation: .7s appering;
+    animation-delay: 2.3s;
+    animation-fill-mode: backwards;
 }
 
 .body.body--scrollDisabled .end {

@@ -6,9 +6,8 @@
 
 .project__wrapper {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-behavior: smooth;
-    gap: 75px;
 }
 
 .project__wrapper::-webkit-scrollbar {
@@ -18,7 +17,16 @@
 .project__card {
     flex: 0 0 auto;
     width: 470px;
-    height: 350px;
+    height: max-content;
+    &:not(:nth-child(2)){ 
+        margin-right: 75px;
+    }
+    &:nth-child(2) {
+        margin-right: 75px;
+    }
+}
+
+.project__card-content {
     .project__card-heading {
         color: $myLightDarkGray;
         font-size: 20px;
@@ -28,40 +36,98 @@
         font-size: 16px;
         color: $myLightGray;
     }
-  }
+}
 
-.project__img {
+.project__img-box {
     position: relative;
     width: 100%;
+    height: 100%;
     overflow: hidden;
+    &:hover .project__link {
+        @include desktop {
+            animation: overlayFromTop .6s;
+            animation-fill-mode: forwards;
+        }
+    }
+    &:hover .project__img {
+        @include desktop {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.project__img {
+    transition: transform .4s;
+}
+
+.project__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba($myGray, $alpha: 0.8);
+    font-size: 20px;
+    color: $myWhite;
+    @include flexCenter;
+    .icon-github {
+        font-size: 45px;
+    }
+}
+
+.project__card-content {
+    padding: 10px;
+    border-end-start-radius: 10px;
+    border-end-end-radius: 10px;
+    background-color: #e1f2ff;
 }
 
 .project__btn {
-    border: solid $myBlue;
-    border-width: 0 3px 3px 0;
     display: inline-block;
-    padding: 10px;
-    cursor: pointer;
-    position: relative;
-    &::before {
-        content: "";
+    border-radius: 50%;
+    margin-top: 20px;
+    .project__spn {
         display: inline-block;
-        position: absolute;
+        cursor: pointer;
+        width: 4em;
+        height: 4em;
+        border: 2px solid $myBlue;
         border-radius: 50%;
-        border: 3px solid $myBlue;
-        height: 100%;
-        width: 100%;
-    }
-    &:hover::before {
-        background-color: $myBlue;
+        margin-right: 1.5em;
+        position: relative;
+        &:hover:not(.disabled) {
+            background-color: $myBlue;
+            &::after {
+                border-top: 0.5em solid $myWhite;
+                border-right: 0.5em solid $myWhite;
+            }
+        }
+        &.disabled {
+            background-color: $myGray;
+            cursor: not-allowed;
+        }
     }
 }
 
-.next {
-    transform: rotate(-45deg);
+.next::after,
+.prev::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 5px solid $myBlue;
+    border-right: 5px solid $myBlue;
+} 
+
+.next::after {
+    transform: translate(-60%, -50%) rotate(45deg);
 }
 
-.prev {
-    transform: rotate(135deg);
-    margin-right: 20px;
-}
+.prev::after {
+    transform: translate(-40%, -50%) rotate(-135deg);
+} 
+

@@ -29,4 +29,15 @@
     }
 }
 
+.about__box-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    .about__counter {
+        display: block;
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+    }
+}
 

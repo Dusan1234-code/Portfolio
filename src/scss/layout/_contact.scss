@@ -20,11 +20,42 @@
         width: 70%;
         line-height: 2;
         color: $myGray;
-        border: 4px solid $myBlack;
         text-align: center;
         padding: 20px;
-        background-color: rgba($myWhite, $alpha: .9);
-        border-radius: 25px;
+        border: 2px solid #5a4366;
+        background-color: $myWhite;
+        border-radius: 100px;
+    }
+}
+
+.contact__social {
+    position: relative;
+    display: inline-block;
+    &.copingMail::after {
+        content: "Copied my mail";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        transform: translate(-50%, -100%);
+        width: max-content;
+        font-size: 14px;
+        background-color: $myBlue;
+        color: $myWhite;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    &.copingMail::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: solid $myBlue;
+        border-width: 0 5px 5px 0;
+        padding: 2px;
+        top: 0;
+        left: 90%;
+        transform: rotate(45deg) translateY(-100%);
     }
 }
 
@@ -58,53 +89,28 @@
     &:hover::before {
         width: 100%;
     }
-}
-
-.contact__social {
-    .contact__link,
-    .contact:visited {
-        display: inline-block;
-        font-size: 60px;
-        color: $myGray;
-        margin-right: 20px;
-        transition: all .3s;
-        &:hover:not(:last-child) {
-            @include desktop {
-                transform: scale(1.1) rotate(20deg);
-            }
-        }
-        @include mobile {
-            font-size: 35px;
-        }
+    &:active {
+        transform: translateY(1px);
     }
 }
 
-.gmail {
-    position: relative;
-    animation: show .5s;
-    animation-fill-mode: backwards;
-    &.copingMail::before {
-        content: "Copied my mail";
-        display: block;
-        position: absolute;
-        top: 0;
-        transform: translateY(-70%);
-        width: max-content;
-        font-size: 14px;
-        background-color: $myBlue;
-        color: $myWhite;
-        text-align: center;
-        padding: 10px;
-        border-radius: 10px;
+.contact__link,
+.contact:visited {
+    display: inline-block;
+    font-size: 60px;
+    color: $myGray;
+    margin-right: 20px;
+    transition: transform .2s;
+    &:hover {
+        @include desktop {
+            transform: scale(1.1) rotate(20deg);
+        }
     }
-    &.copingMail::after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        border: solid $myBlue;
-        border-width: 0 5px 5px 0;
-        padding: 2px;
-        top: 0;
-        transform: rotate(45deg) translateY(100%);
+    &:active {
+        transform: scale(1) rotate(0);
+    }
+    @include mobile {
+        font-size: 35px;
     }
 }
+

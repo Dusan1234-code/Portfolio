@@ -50,7 +50,7 @@
 					<span class="job js-job"><span class="rs-only">Showing Frontend developer as my job</span></span>
 				</h1>
 				<div class="main__content">
-					<img src="./images/mainPicture.jpg" alt="Picture of me" class="main__picture">
+					<img src="./images/myImage.jpg" alt="Picture of me" class="main__picture">
 					<a href="CV.pdf" download="DusanGacesaCV" class="main__btn btn">Download CV</a>
 				</div>
 			</div>
@@ -64,7 +64,22 @@
 					</div>
 					<div class="about__text-wrapper">
 						<p class="about__text">
-							I'm a detail-oriented person with good communication skills. As a semi-professional football player, l have become a great team player and learned the importance of discipline, dedication, and hard work. A very curious person, always looking to learn about new things. At this moment, my priority is to expand my knowledge about JavaScript and write clean code.. </p>
+							I'm a detail-oriented person with good communication skills. As a semi-professional football player, l have become a great team player and learned the importance of discipline, dedication, and hard work. A very curious person, always looking to learn about new things. At this moment, my priority is to expand my knowledge about JavaScript and write clean code...
+						</p>
+						<div class="about__box-wrapper">
+							<div class="about__box">
+								<span class="about__counter" data-target="4"></span>
+								<span>gray hairs</span>
+							  </div>
+							  <div class="about__box">
+								<span class="about__counter" data-target="1500"></span>
+								<span>hours on stackoverflow</span>
+							  </div>
+							  <div class="about__box">
+								<span class="about__counter" data-target="2"></span>
+								<span>dioptres</span>
+							  </div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -127,54 +142,105 @@
 		<section class="project">
 			<div class="project__container container">
 				<h2 class="contact__heading section-heading">Projects</h2>
-				<div class="project__wrapper">
+				<div class="project__wrapper js-project-wrapper">
 					<!-- CARD 1 -->
 					<div class="project__card">
-						<img src="./images/digitalStudio.png" alt="" class="project__img">
-						<h3 class="project__card-heading">Digital Studio</h3>
-						<span class="project__tech">Html, Scss, JavaScript</span>
+						<div class="project__img-box">
+							<img src="./images/digitalStudio.png" alt="Project image" class="project__img">
+							<a href="https://github.com/Dusan1234-code" target="_blank" class="project__link">
+							<span class="overlay-heading">
+								Visit project on github
+							</span>
+								<span class="icon-github"></span>
+							</a>
+						</div>
+						<div class="project__card-content">
+							<h3 class="project__card-heading">Frontend Rules</h3>
+							<span class="project__tech">Html, Scss, JavaScript</span>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+						</div>
 					</div>
 					<!-- CARD 2 -->
 					<div class="project__card">
 						<img src="./images/digitalStudio.png" alt="" class="project__img">
-						<h3 class="project__card-heading">Frontend Rules</h3>
-						<span class="project__tech">Html, Scss, JavaScript</span>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+						<div class="project__card-content">
+
+							<h3 class="project__card-heading">Frontend Rules</h3>
+							<span class="project__tech">Html, Scss, JavaScript</span>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+						</div>
 					</div>
 					<!-- CARD 3 -->
 					<div class="project__card">
 						<img src="./images/digitalStudio.png" alt="" class="project__img">
-						<h3 class="project__card-heading">Digital Studio</h3>
-						<span class="project__tech">Html, Scss, JavaScript</span>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+						<div class="project__card-content">
+
+							<h3 class="project__card-heading">Frontend Rules</h3>
+							<span class="project__tech">Html, Scss, JavaScript</span>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+						</div>
+					</div>
+					<!-- CARD 4 -->
+					<div class="project__card">
+						<img src="./images/digitalStudio.png" alt="" class="project__img">
+						<div class="project__card-content">
+
+							<h3 class="project__card-heading">Frontend Rules</h3>
+							<span class="project__tech">Html, Scss, JavaScript</span>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+						</div>
 					</div>
 				</div>
-				<button class="project__btn prev"></button>
-				<button class="project__btn next"></button>
+				<button class="project__btn js-prev">
+					<span class="project__spn prev js-prev-span disabled">
+						<span class="sr-only">
+							Click on button shows previous slide projects
+						</span>
+					</span>
+				</button>
+				<button class="project__btn js-next">
+					<span class="project__spn next js-next-span">
+						<span class="sr-only">
+							Click on button shows next slide projects
+						</span>
+					</span>
+				</button>
 			</div>
 		</section>
 		<section class="contact" id="contact">
 			<div class="contact__container container">
 				<h2 class="contact__heading section-heading">Contact</h2>
 				<h3 class="contact__subheading section-subheading">Get in touch</h3>
-				<div class="contact__content cloud">
-					<p class="contact__text bottom_c">My inbox is always open. Whether you have a question or just want to say hi, I will try my best to get back to you!</p>
-					<a href="mailto:dusangacesa727@gmail.com" class="contact__btn right_c" >Say Hello
+				<div class="contact__content">
+					<p class="contact__text">My inbox is always open. Whether you have a question or just want to say hi, I will try my best to get back to you!</p>
+					<a href="mailto:dusangacesa727@gmail.com" class="contact__btn">Say Hello
 						<span class="icon-mail"></span>
 						<span class="sr-only">Mail icon</span>
 					</a>
 					<img src="./images/holdingAstro.png" alt="Astronaut holding text" class="contact__img">
 				</div>
 				<h3 class="contact__subheading section-subheading">Social</h3>
-				<div class="contact__social">
+				<div class="contact__social js-social">
 					<a href="https://www.linkedin.com/in/dusan-gacesa/" target="_blank" class="contact__link">
-						<span class="icon-linkedin contact__icon"></span>
+						<span class="icon-linkedin contact__icon">
+							<span class="sr-only">
+								Click leads you to my linkedin page
+							</span>
+						</span>
 					</a>
 					<a href="https://github.com/Dusan1234-code" target="_blank" class="contact__link">
-						<span class="icon-github contact__icon"></span>
+						<span class="icon-github contact__icon">
+							<span class="sr-only">
+								Click leads you to my github profile
+							</span>
+						</span>
 					</a>
 					<a href="#javavoid(0)" class="contact__link js-gmail gmail">
-						<span class="icon-gmail contact__icon"></span>
+						<span class="icon-gmail contact__icon">
+							<span class="sr-only">
+								Click copies my gmail adress to your clipboard
+							</span>
+						</span>
 					</a>
 				</div>
 			</div>

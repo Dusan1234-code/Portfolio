@@ -6,24 +6,27 @@ let navLinks = document.querySelectorAll(".js-header-link");
 let arrowToTop = document.querySelector(".js-arrow");
 let gmailBtn = document.querySelector(".js-gmail");
 let main = document.querySelector(".js-main");
-
-
-const productContainers = [...document.querySelectorAll('.project__wrapper')];
-let prev = document.querySelector(".prev");
-let next = document.querySelector(".next");
+let socialHeading = document.querySelector(".js-social");
+const productContainers = [...document.querySelectorAll('.js-project-wrapper')];
+let prev = document.querySelector(".js-prev");
+let next = document.querySelector(".js-next");
+let prevSpan = document.querySelector(".js-prev-span");
+let nextSpan = document.querySelector(".js-next-span");
+let counters = document.querySelectorAll(".about__counter");
 
 
 // CAROUSEL 
-productContainers.forEach((item,i) => {
+productContainers.forEach((item) => {
     let containerDimension = item.getBoundingClientRect();
     let containerWidth = containerDimension.width;
-  
-  
     prev.addEventListener("click",() => {
       item.scrollLeft -= containerWidth;
+      prevSpan.classList.add("disabled");
+      nextSpan.classList.remove("disabled");
     })
-
     next.addEventListener("click",() => {
+        prevSpan.classList.remove("disabled");
+        nextSpan.classList.add("disabled");
         item.scrollLeft += containerWidth;
       })
   })
@@ -31,9 +34,9 @@ productContainers.forEach((item,i) => {
  // COPY MAIL
 gmailBtn.addEventListener("click",()=> {
     navigator.clipboard.writeText("dusangacesa727@gmail.com");
-    gmailBtn.classList.add("copingMail");
+    socialHeading.classList.add("copingMail");
     setTimeout(() => {
-        gmailBtn.classList.remove("copingMail")
+        socialHeading.classList.remove("copingMail")
     }, 2100);
 })
 
@@ -80,4 +83,35 @@ const observer = new IntersectionObserver(function(entries){
     threshold: 0
 })
 observer.observe(main);
+
+// NUMBER COUNTER 
+let speed = 20;
+const observerTwo = new IntersectionObserver(entries => {
+    let entry = entries[0];
+    let times = 0
+    if(entry.isIntersecting == false) {
+        if(times == 0) {
+            counters.forEach((counter)=>{
+                counter.innerText = "0";
+                let updateNumber = () => {
+                  const target = +counter.getAttribute("data-target");
+                  const c = +counter.innerText;
+                  const increment = target / speed;
+                  if(c < target){
+                    counter.innerText = `${Math.ceil(c + increment)}`;
+                    setTimeout(updateNumber, 90);
+                  }
+                }
+                updateNumber();
+            })
+        }
+        times++;
+    }
+}, {
+    root: null,
+    threshold: 0.2
+})
+observerTwo.observe(main);
+
+
 

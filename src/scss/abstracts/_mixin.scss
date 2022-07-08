@@ -50,3 +50,10 @@
   background-color: $myBlue;
   margin-left: 6px;
 }
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
