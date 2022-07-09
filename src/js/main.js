@@ -88,9 +88,9 @@ observer.observe(main);
 let speed = 20;
 const observerTwo = new IntersectionObserver(entries => {
     let entry = entries[0];
-    let times = 0
+    let times = 0;
+    if(times == 0) {
     if(entry.isIntersecting == false) {
-        if(times == 0) {
             counters.forEach((counter)=>{
                 counter.innerText = "0";
                 let updateNumber = () => {
@@ -104,9 +104,10 @@ const observerTwo = new IntersectionObserver(entries => {
                 }
                 updateNumber();
             })
-        }
-        times++;
     }
+    times++;
+    console.log(times);
+}
 }, {
     root: null,
     threshold: 0.2

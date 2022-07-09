@@ -43,6 +43,10 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    padding: 5px;
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+    background-color: #f0f8ff;
     &:hover .project__link {
         @include desktop {
             animation: overlayFromTop .6s;
@@ -80,7 +84,7 @@
     padding: 10px;
     border-end-start-radius: 10px;
     border-end-end-radius: 10px;
-    background-color: #e1f2ff;
+    background-color: #f0f8ff;
 }
 
 .project__btn {
@@ -104,8 +108,8 @@
             }
         }
         &.disabled {
-            background-color: $myGray;
             cursor: not-allowed;
+            opacity: .5;
         }
     }
 }

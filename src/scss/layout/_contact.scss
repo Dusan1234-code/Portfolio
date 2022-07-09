@@ -1,6 +1,7 @@
 .contact {
     padding-bottom: 60px;
 }
+
 .contact__content {
     display: flex;
     flex-direction: column;
@@ -57,6 +58,10 @@
         left: 90%;
         transform: rotate(45deg) translateY(-100%);
     }
+}
+
+.social {
+    margin-top: 40px;
 }
 
 .contact__btn,

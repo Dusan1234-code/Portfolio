@@ -4,9 +4,8 @@
 
 .about__content {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
     @include mobile {
         align-items: flex-start;
@@ -19,6 +18,7 @@
     position: relative;
     .about__img {
         height: 420px;
+        transform: scaleX(-1);
     }
 }
 
@@ -31,13 +31,16 @@
 
 .about__box-wrapper {
     display: flex;
-    gap: 15px;
-    margin-top: 40px;
+    justify-content: space-around;
+    margin-top: 80px;
     .about__counter {
         display: block;
         text-align: center;
         font-weight: 700;
-        font-size: 30px;
+        font-size: 45px;
+    }
+    .about__counter-desc {
+        color: $myLightGray;
     }
 }
 
