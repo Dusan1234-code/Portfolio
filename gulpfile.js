@@ -74,7 +74,7 @@ gulp.task('copy-fonts', ()=> {
 });
 
 gulp.task('copy-assets', ()=> {
-	return gulp.src('src/images/*.{png,svg,jpg,jpeg}')
+	return gulp.src('src/images/*.{png,svg,jpg,jpeg,webp}')
 		.pipe(gulp.dest('dist/images'));
 });
 

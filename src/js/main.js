@@ -13,9 +13,11 @@ let next = document.querySelector(".js-next");
 let prevSpan = document.querySelector(".js-prev-span");
 let nextSpan = document.querySelector(".js-next-span");
 let counters = document.querySelectorAll(".about__counter");
+let media = window.matchMedia("(min-width: 1140px)");
 
 
 // CAROUSEL 
+if(media.matches) {
 productContainers.forEach((item) => {
     let containerDimension = item.getBoundingClientRect();
     let containerWidth = containerDimension.width;
@@ -30,7 +32,7 @@ productContainers.forEach((item) => {
         item.scrollLeft += containerWidth;
       })
   })
-
+}
  // COPY MAIL
 gmailBtn.addEventListener("click",()=> {
     navigator.clipboard.writeText("dusangacesa727@gmail.com");
@@ -70,6 +72,7 @@ window.addEventListener("load",()=> typeWritter());
 arrowToTop.addEventListener("click",()=>{
     window.scrollTo(0,0);
 })
+option = {threshold: 0};
 const observer = new IntersectionObserver(function(entries){
     const ent = entries[0];
     if(!ent.isIntersecting) {
@@ -78,18 +81,14 @@ const observer = new IntersectionObserver(function(entries){
     if(ent.isIntersecting) {
         arrowToTop.classList.remove("arrow-visible");
     }
-}, {
-    root: null,
-    threshold: 0
-})
+}, option)
 observer.observe(main);
 
 // NUMBER COUNTER 
 let speed = 20;
-const observerTwo = new IntersectionObserver(entries => {
+let optionTwo = {threshold: 0.2};
+const observerTwo = new IntersectionObserver((entries,observe) => {
     let entry = entries[0];
-    let times = 0;
-    if(times == 0) {
     if(entry.isIntersecting == false) {
             counters.forEach((counter)=>{
                 counter.innerText = "0";
@@ -104,14 +103,9 @@ const observerTwo = new IntersectionObserver(entries => {
                 }
                 updateNumber();
             })
-    }
-    times++;
-    console.log(times);
+            observerTwo.unobserve(main);
 }
-}, {
-    root: null,
-    threshold: 0.2
-})
+}, optionTwo)
 observerTwo.observe(main);
 
 

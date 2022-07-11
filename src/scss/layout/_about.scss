@@ -8,8 +8,15 @@
     align-items: center;
     gap: 24px;
     @include mobile {
+        gap: 0;
         align-items: flex-start;
         flex-direction: column;
+    }
+}
+
+.about__heading {
+    @include mobile {
+        margin-bottom: 0;
     }
 }
 
@@ -19,6 +26,9 @@
     .about__img {
         height: 420px;
         transform: scaleX(-1);
+        @include mobile {
+            height: 240px;
+        }
     }
 }
 
@@ -29,18 +39,39 @@
     }
 }
 
+.about__text {
+    @include mobile {
+        font-size: 16px;
+    }
+}
+
 .about__box-wrapper {
     display: flex;
     justify-content: space-around;
     margin-top: 80px;
+    @include mobile {
+        margin-top: 40px;
+    }
     .about__counter {
-        display: block;
+        display: inline-block;
         text-align: center;
         font-weight: 700;
         font-size: 45px;
+        @include mobile {
+            font-size: 35px;
+        }
     }
     .about__counter-desc {
         color: $myLightGray;
+        display: block;
+    }
+    .plus {
+        font-weight: 700;
+        display: inline;
+        font-size: 45px;
+        @include mobile {
+            font-size: 35px;
+        }
     }
 }
 

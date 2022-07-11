@@ -4,16 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Dusan Gacesa is frontend developer from Serbia.This portfolio shows his knowledge, experience and his developemnt.">
 	<title>Dusan Gacesa | Welcome</title>
-	<link href="./favicon.ico" rel="icon">
+	<link href="favicon.ico" rel="icon">
 	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="body js-body">
 	<header class="header js-header">
 		<div class="header__container container">
-			<div class="logo">
-				<p>LOGO</p>
-			</div>
+				<a href="index.html">
+					<img src="./images/logo.webp" alt="Logo picture of website" class="header__logo">
+				</a>
 			<nav class="header__nav"> 
 				<ul class="header__list">
 					<li class="header__item">
@@ -26,7 +27,7 @@
 						<a href="#development" class="header__link js-header-link">Development</a>
 					</li>
 					<li class="header__item">
-						<a href="#" class="header__link js-header-link">Projects</a>
+						<a href="#projects" class="header__link js-header-link">Projects</a>
 					</li>
 					<li class="header__item">
 						<a href="#contact" class="header__link js-header-link">Contact</a>
@@ -47,11 +48,15 @@
 					<span class="main__hello">Hello,</span> 
 					<span class="main__space">l'm Dusan Gacesa</span>
 					<span class="main__space main__hello">and l'm</span>
-					<span class="job js-job"><span class="rs-only">Showing Frontend developer as my job</span></span>
+					<span class="job js-job">
+						<span class="rs-only">
+							Showing Frontend developer as my job
+						</span>
+					</span>
 				</h1>
 				<div class="main__content">
 					<img src="./images/myImage.jpg" alt="Picture of me" class="main__picture">
-					<a href="CV.pdf" download="DusanGacesaCV" class="main__btn btn">Download CV</a>
+					<a href="CV.pdf" download="DusanGacesaCV" class="main__btn btn">Download Resume</a>
 				</div>
 			</div>
 		</section>
@@ -69,11 +74,13 @@
 						<div class="about__box-wrapper">
 							<div class="about__box">
 								<span class="about__counter" data-target="4"></span>
+								<span class="plus">+</span>
 								<span class="about__counter-desc">gray hairs</span>
 							  </div>
 							  <div class="about__box">
 								<span class="about__counter" data-target="1500"></span>
-								<span class="about__counter-desc">hours on stackoverflow</span>
+								<span class="plus">+</span>
+								<span class="about__counter-desc">hours on Stackoverflow</span>
 							  </div>
 						</div>
 					</div>
@@ -135,15 +142,57 @@
 				</div>
 			</div>
 		</section>
-		<section class="project">
+		<section class="project" id="projects">
 			<div class="project__container container">
 				<h2 class="contact__heading section-heading">Projects</h2>
 				<div class="project__wrapper js-project-wrapper">
 					<!-- CARD 1 -->
 					<div class="project__card">
 						<div class="project__img-box">
-							<img src="./images/digitalStudio.png" alt="Project image" class="project__img">
-							<a href="https://github.com/Dusan1234-code" target="_blank" class="project__link">
+							<img src="./images/digitalStudio.webp" alt="Project image" class="project__img">
+							<a href="https://github.com/Dusan1234-code/JavaScript-Digital-Studio" target="_blank" class="project__link">
+							<span class="overlay-heading">
+								Visit project on github
+							</span>
+								<span class="icon-github"></span>
+							</a>
+						</div>
+						<div class="project__card-content">
+							<h3 class="project__card-heading">Digital Studio</h3>
+							<span class="project__tech">
+								<span class="html">Html</span>
+								<span class="scss">Scss</span>
+								<span class="javascript">JavaScript</span>
+							</span>
+							<p class="project__card-text">Project developed for expanding information about local company</p>
+						</div>
+					</div>
+					<!-- CARD 2 -->
+					<div class="project__card">
+						<div class="project__img-box">
+							<img src="./images/adoption.webp" alt="Project image" class="project__img">
+							<a href="https://github.com/Dusan1234-code/4.Angular-Projects-Pet_Adopt" target="_blank" class="project__link">
+							<span class="overlay-heading">
+								Visit project on github
+							</span>
+								<span class="icon-github"></span>
+							</a>
+						</div>
+						<div class="project__card-content">
+							<h3 class="project__card-heading">Pet Adopt</h3>
+							<span class="project__tech">
+								<span class="html">Html</span>
+								<span class="bootstrap">Bootstrap</span>
+								<span class="angular">Angular</span>
+							</span>
+							<p class="project__card-text">Developed for needs of homeless dogs to find their comfort</p>
+						</div>
+					</div>
+					<!-- CARD 3 -->
+					<div class="project__card">
+						<div class="project__img-box">
+							<img src="./images/rules.webp" alt="Project image" class="project__img">
+							<a href="https://github.com/Dusan1234-code/JavaScriptPractise-Front-WebPage" target="_blank" class="project__link">
 							<span class="overlay-heading">
 								Visit project on github
 							</span>
@@ -152,38 +201,33 @@
 						</div>
 						<div class="project__card-content">
 							<h3 class="project__card-heading">Frontend Rules</h3>
-							<span class="project__tech">Html, Scss, JavaScript</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
-						</div>
-					</div>
-					<!-- CARD 2 -->
-					<div class="project__card">
-						<img src="./images/digitalStudio.png" alt="" class="project__img">
-						<div class="project__card-content">
-
-							<h3 class="project__card-heading">Frontend Rules</h3>
-							<span class="project__tech">Html, Scss, JavaScript</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
-						</div>
-					</div>
-					<!-- CARD 3 -->
-					<div class="project__card">
-						<img src="./images/digitalStudio.png" alt="" class="project__img">
-						<div class="project__card-content">
-
-							<h3 class="project__card-heading">Frontend Rules</h3>
-							<span class="project__tech">Html, Scss, JavaScript</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+							<span class="project__tech">
+								<span class="html">Html</span>
+								<span class="scss">Scss</span>
+								<span class="javascript">JavaScript</span>
+							</span>
+							<p class="project__card-text">Project developed for local company for sharing informations about them</p>
 						</div>
 					</div>
 					<!-- CARD 4 -->
 					<div class="project__card">
-						<img src="./images/digitalStudio.png" alt="" class="project__img">
+						<div class="project__img-box">
+							<img src="./images/portfolio.webp" alt="Project image" class="project__img">
+							<a href="https://github.com/Dusan1234-code/Portfolio" target="_blank" class="project__link">
+							<span class="overlay-heading">
+								Visit project on github
+							</span>
+								<span class="icon-github"></span>
+							</a>
+						</div>
 						<div class="project__card-content">
-
-							<h3 class="project__card-heading">Frontend Rules</h3>
-							<span class="project__tech">Html, Scss, JavaScript</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, officia?</p>
+							<h3 class="project__card-heading">Portfolio</h3>
+							<span class="project__tech">
+								<span class="html">Html</span>
+								<span class="scss">Scss</span>
+								<span class="javascript">JavaScript</span>
+							</span>
+							<p class="project__card-text">Code for this portfolio can be viewed on my github profile</p>
 						</div>
 					</div>
 				</div>

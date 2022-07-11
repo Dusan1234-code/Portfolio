@@ -9,13 +9,17 @@
     gap: 20px;
     position: relative;
     .contact__img {
-        width: 300px;
-        height: 300px;
+        width: 20%;
+        height: 240px;
         padding-right: 10px;
         position: absolute;
-        top: -3%;
+        top: 10%;
         left: 15%;
         z-index: -1;
+        @include mobile {
+            width: 30%;
+            left: 0;
+        }
     }
     .contact__text {
         width: 70%;
@@ -26,6 +30,13 @@
         border: 2px solid #5a4366;
         background-color: $myWhite;
         border-radius: 100px;
+        @include tablet {
+            width: 90%;
+        }
+        @include mobile {
+            width: 100%;
+            font-size: 16px;
+        }
     }
 }
 
@@ -115,7 +126,7 @@
         transform: scale(1) rotate(0);
     }
     @include mobile {
-        font-size: 35px;
+        font-size: 45px;
     }
 }
 

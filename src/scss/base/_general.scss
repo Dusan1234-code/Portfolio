@@ -40,6 +40,12 @@ html {
     border-radius: 25px;
     cursor: pointer;
     font-size: 18px;
+    @include tablet {
+        padding: 12px 25px;
+    }
+    @include mobile {
+        font-size: 16px;
+    }
 }
 
 .sr-only {
@@ -62,9 +68,11 @@ html {
     }
     @include tablet {
         font-size: 48px;
+        margin-bottom: 30px;
     }
     @include mobile {
-        font-size: 38px;
+        margin-bottom: 15px;
+        font-size: 36px;
     }
 }
 
@@ -76,6 +84,7 @@ html {
     text-transform: lowercase;
     @include tablet {
         font-size: 38px;
+        margin-bottom: 24px;
     }
     @include mobile {
         font-size: 30px;
@@ -113,7 +122,7 @@ html {
         }
     }
     @include mobile {
-        padding: 5px 10px;
+        padding: 12px;
     }
 }
 
@@ -129,4 +138,31 @@ html {
         border-width: 0 4px 4px 0;
         padding: 4px;
     }
+}
+
+.tech-tag {
+    color: white;
+    border-radius: 100px;
+    padding: 5px 10px;
+}
+
+.html {
+    @include tags(#e54c21)
+}
+
+.scss {
+    @include tags(#ce679a)
+}
+
+.javascript {
+    @include tags (#f7e018);
+    color: $myBlack;
+}
+
+.bootstrap {
+    @include tags(#8c0bfd);
+}
+
+.angular {
+    @include tags(#dd0031);
 }
