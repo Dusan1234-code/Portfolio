@@ -27,7 +27,7 @@
     .development__box-subheading {
         font-size: 30px;
         font-family: $soraBold;
-        margin-bottom: 5px;
+        margin-bottom: 3px;
         color: $myGray;
         @include tablet {
             font-size: 26px;
@@ -48,7 +48,7 @@
     .development__box-city {
         display: inline-block;
         color: $myLightGray;
-        margin-bottom: 5px;
+        margin-bottom: 12px;
         font-size: 16px;
         @include mobile {
             margin-bottom: 12px;

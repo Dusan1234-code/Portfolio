@@ -10,15 +10,16 @@
     position: relative;
     .contact__img {
         width: 20%;
-        height: 240px;
+        height: 100%;
         padding-right: 10px;
         position: absolute;
-        top: 10%;
+        top: 16%;
         left: 15%;
         z-index: -1;
         @include mobile {
-            width: 30%;
-            left: 0;
+            width: 25%;
+            top: 9%;
+            left: 5%;
         }
     }
     .contact__text {
@@ -35,6 +36,8 @@
         }
         @include mobile {
             width: 100%;
+            padding: 10px 14px;
+            border-radius: 20px;
             font-size: 16px;
         }
     }
@@ -126,7 +129,7 @@
         transform: scale(1) rotate(0);
     }
     @include mobile {
-        font-size: 45px;
+        font-size: 48px;
     }
 }
 

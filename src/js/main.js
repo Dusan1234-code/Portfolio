@@ -15,6 +15,19 @@ let nextSpan = document.querySelector(".js-next-span");
 let counters = document.querySelectorAll(".about__counter");
 let media = window.matchMedia("(min-width: 1140px)");
 
+// LOADER ANIMATION
+document.onreadystatechange = function () {
+    var state = document.readyState;
+    if (state == 'interactive') {
+         document.querySelector('.content').style.display="none";
+         body.classList.add("loader-b");
+    } else if (state == 'complete') {
+           document.querySelector('.loader').style.display="none";
+           document.querySelector('.content').style.display="block";
+           typeWritter();
+           body.classList.remove("loader-b");
+    }
+}
 
 // CAROUSEL 
 if(media.matches) {
@@ -22,9 +35,9 @@ productContainers.forEach((item) => {
     let containerDimension = item.getBoundingClientRect();
     let containerWidth = containerDimension.width;
     prev.addEventListener("click",() => {
-      item.scrollLeft -= containerWidth;
-      prevSpan.classList.add("disabled");
-      nextSpan.classList.remove("disabled");
+        prevSpan.classList.add("disabled");
+        nextSpan.classList.remove("disabled");
+        item.scrollLeft -= containerWidth;
     })
     next.addEventListener("click",() => {
         prevSpan.classList.remove("disabled");
@@ -66,7 +79,7 @@ typeWritter = () => {
         setTimeout(typeWritter, 100)
     }
 }
-window.addEventListener("load",()=> typeWritter());
+// window.addEventListener("load",()=> typeWritter());
 
 // ARROW TO TOP
 arrowToTop.addEventListener("click",()=>{
@@ -85,10 +98,11 @@ const observer = new IntersectionObserver(function(entries){
 observer.observe(main);
 
 // NUMBER COUNTER 
-let speed = 20;
-let optionTwo = {threshold: 0.2};
+let speed = 80;
+let optionTwo = {threshold: 0.1};
 const observerTwo = new IntersectionObserver((entries,observe) => {
     let entry = entries[0];
+    console.log(entry.isIntersecting);
     if(entry.isIntersecting == false) {
             counters.forEach((counter)=>{
                 counter.innerText = "0";
@@ -107,6 +121,9 @@ const observerTwo = new IntersectionObserver((entries,observe) => {
 }
 }, optionTwo)
 observerTwo.observe(main);
+
+// 
+
 
 
 

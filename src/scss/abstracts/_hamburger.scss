@@ -18,7 +18,7 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 7px;
+    top: 8px;
     background-color: $myBlack;
     height: 3px;
     width: 32px;
@@ -28,10 +28,10 @@
 }
 
 .header__hamburger .header__bar:before {
-    top: -7px;
+    top: -8px;
 }
 
-// OPENS UP
+
 .active .header__hamburger .header__bar {
 	background-color: transparent;
 }
