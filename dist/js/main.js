@@ -100,9 +100,8 @@ observer.observe(main);
 // NUMBER COUNTER 
 let speed = 80;
 let optionTwo = {threshold: 0.1};
-const observerTwo = new IntersectionObserver((entries,observe) => {
+const observerTwo = new IntersectionObserver((entries) => {
     let entry = entries[0];
-    console.log(entry.isIntersecting);
     if(entry.isIntersecting == false) {
             counters.forEach((counter)=>{
                 counter.innerText = "0";

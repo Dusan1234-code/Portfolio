@@ -4,13 +4,13 @@
     @media (min-width: $desktop) {
       @content;
     }
-  }
+}
   
 @mixin tablet {
     @media (max-width: $tablet) {
       @content;
     }
-  }
+}
 
 @mixin mobile {
     @media (max-width: $mobile) {
@@ -19,7 +19,26 @@
 }
 
 @mixin mobileSmall {
-  @media (max-width: $mobile) {
+  @media (max-width: $mobileSmall) {
+    @content;
+  }
+}
+
+@mixin mobileAstro {
+  @media (max-width: $mobileAstro) {
+    @content;
+  }
+}
+
+
+@mixin mobileHeading {
+  @media (max-width: $mobileHeading) {
+    @content;
+  }
+}
+
+@mixin mobileSectionHeading {
+  @media (max-width: $mobileSectionHeading) {
     @content;
   }
 }

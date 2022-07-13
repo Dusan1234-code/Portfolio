@@ -9,7 +9,12 @@
         display: inline-block;
         margin-top: 30px;
         color: $myWhite;
+        font-size: 16px;
     }
+}
+
+.content {
+  animation: appering .6s;
 }
 
 .loader {

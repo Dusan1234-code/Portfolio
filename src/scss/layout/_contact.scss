@@ -9,17 +9,25 @@
     gap: 20px;
     position: relative;
     .contact__img {
-        width: 20%;
-        height: 100%;
+        width: 30%;
+        height: 300px;
         padding-right: 10px;
         position: absolute;
-        top: 16%;
+        top: 0;
         left: 15%;
         z-index: -1;
         @include mobile {
             width: 25%;
-            top: 9%;
+            top: 2%;
             left: 5%;
+            height: 200px;
+        }
+        @include mobileSmall {
+            width: 30%;
+        }
+        @include mobileAstro {
+            top: 19%;
+            height: 180px;
         }
     }
     .contact__text {
@@ -39,6 +47,10 @@
             padding: 10px 14px;
             border-radius: 20px;
             font-size: 16px;
+        }
+        @include mobileSmall {
+            padding: 10px;
+            font-size: 14px;
         }
     }
 }
@@ -60,6 +72,11 @@
         text-align: center;
         padding: 10px;
         border-radius: 10px;
+        @include mobileSectionHeading {
+            left: 90%;
+            font-size: 14px;
+            padding: 7px;
+        }
     }
     &.copingMail::before {
         content: "";
@@ -92,6 +109,10 @@
     align-items: center;
     gap: 5px;
     position: relative;
+    @include mobile {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
     &::before {
         content: "";
         display: inline-block;

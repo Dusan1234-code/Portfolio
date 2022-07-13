@@ -52,19 +52,6 @@
     @include mobile {
         margin-top: 40px;
     }
-    .about__counter {
-        display: inline-block;
-        text-align: center;
-        font-weight: 700;
-        font-size: 45px;
-        @include mobile {
-            font-size: 35px;
-        }
-    }
-    .about__counter-desc {
-        color: $myLightGray;
-        display: block;
-    }
     .plus {
         font-weight: 700;
         display: inline;
@@ -73,5 +60,24 @@
             font-size: 35px;
         }
     }
+}
+
+.about__counter {
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 45px;
+    @include mobile {
+        font-size: 35px;
+    }
+}
+.about__counter-desc {
+    color: $myLightGray;
+    display: block;
+}
+
+.effects {
+    margin-top: 15px;
+    font-family: $soraMedium;
 }
 

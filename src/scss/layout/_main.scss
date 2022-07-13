@@ -34,6 +34,9 @@
     @include mobile {
         font-size: 32px;
     }
+    @include mobileHeading {
+        font-size: 22px;
+    }
     .main__space {
         display: block;
     }

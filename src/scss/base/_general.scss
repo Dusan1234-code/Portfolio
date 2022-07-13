@@ -74,6 +74,9 @@ html {
         margin-bottom: 15px;
         font-size: 36px;
     }
+    @include mobileSectionHeading {
+        font-size: 31px;
+    }
 }
 
 .section-subheading {
@@ -88,6 +91,9 @@ html {
     }
     @include mobile {
         font-size: 30px;
+    }
+    @include mobileSectionHeading {
+        font-size: 28px;
     }
 }
 
