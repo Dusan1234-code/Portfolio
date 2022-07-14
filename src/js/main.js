@@ -86,6 +86,7 @@ arrowToTop.addEventListener("click",()=>{
     window.scrollTo(0,0);
 })
 option = {threshold: 0};
+
 const observer = new IntersectionObserver(function(entries){
     const ent = entries[0];
     if(!ent.isIntersecting) {
@@ -98,30 +99,33 @@ const observer = new IntersectionObserver(function(entries){
 observer.observe(main);
 
 // NUMBER COUNTER 
+let about = document.getElementById("about");
 let speed = 80;
-let optionTwo = {threshold: 0.1};
+let optionTwo = {root:null,threshold: 0.8};
+
 const observerTwo = new IntersectionObserver((entries) => {
     let entry = entries[0];
-    if(entry.isIntersecting == false) {
-            counters.forEach((counter)=>{
-                counter.innerText = "0";
-                let updateNumber = () => {
-                  const target = +counter.getAttribute("data-target");
-                  const c = +counter.innerText;
-                  const increment = target / speed;
-                  if(c < target){
-                    counter.innerText = `${Math.ceil(c + increment)}`;
-                    setTimeout(updateNumber, 90);
-                  }
-                }
-                updateNumber();
-            })
-            observerTwo.unobserve(main);
-}
+    if(entry.isIntersecting) {
+        counters.forEach((counter)=>{
+            counter.innerText = "0";
+            let updateNumber = () => {
+              const target = +counter.getAttribute("data-target");
+              const c = +counter.innerText;
+              const increment = target / speed;
+              if(c < target){
+                counter.innerText = `${Math.ceil(c + increment)}`;
+                setTimeout(updateNumber, 90);
+              }
+            }
+            updateNumber();
+            observerTwo.unobserve(about);
+        })
+    }
 }, optionTwo)
-observerTwo.observe(main);
+observerTwo.observe(about);
 
-// 
+// COUNTER 
+
 
 
 
