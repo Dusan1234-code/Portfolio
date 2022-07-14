@@ -7,6 +7,8 @@
 	<meta name="description" content="Dusan Gacesa is frontend developer from Serbia.This portfolio shows his knowledge, experience and his developemnt.">
 	<title>Portfolio | Dusan Gacesa</title>
 	<link href="favicon.ico" rel="icon">
+	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="128x128" href="./images/android-chrome.png">
 	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="body js-body">
@@ -57,7 +59,11 @@
 						<span class="job js-job"></span>
 					</h1>
 					<div class="main__content">
-						<img src="./images/myImage.jpg" alt="Picture of me" class="main__picture">
+						<picture>
+							<source srcset="./images/myImage.webp" type="image/webp">
+							<source srcset="./images/myImage.jpg" type="image/jpeg">
+							<img src="./images/myImage.jpg" alt="Picture of me" class="main__picture">
+						</picture>
 						<a href="CV.pdf" download="DusanGacesaCV" class="main__btn btn">Download Resume</a>
 					</div>
 				</div>
@@ -67,18 +73,22 @@
 					<h2 class="about__heading section-heading">About me</h2>
 					<div class="about__content">
 						<div class="about__img-wrapper">
-							<img src="./images/businessAstro.jpg" alt="Business Astronaut Picture" class="about__img">
+							<picture>
+								<source srcset="./images/businessAstro.webp" type="image/webp">
+								<source srcset="./images/businessAstro.jpg" type="image/jpg">
+								<img src="./images/businessAstro.jpg" alt="Business Astronaut Picture" class="about__img">
+							</picture>
 						</div>
 						<div class="about__text-wrapper">
 							<p class="about__text">
-								I'm a detail-oriented person with good communication skills. As a semi-professional football player, l have become a great team player and learned the importance of discipline, dedication, and hard work. A very curious person, always looking to learn about new things. At this moment, my priority is to expand my knowledge about JavaScript and write clean code...
+								I'm a detail-oriented person with good communication skills. People like to describe me as a person who will easily make friends wherever I am. Since childhood, sport is my passion, so as a semi-professional football player, l have become a great team player and learned the importance of discipline, dedication, and hard work (it wasnt easy getting up every sunday morning, especially after saturday night out). A very curious person, always looking to learn about new things. At this moment, my priority is to expand my knowledge about JavaScript, Typescript and write clean code...
 							</p>
 							<p class="about__text effects">
 								Codding side effects:
 							</p>
 							<div class="about__box-wrapper">
 								<div class="about__box">
-									<span class="about__counter" data-target="10"></span>
+									<span class="about__counter" data-target="15"></span>
 									<span class="plus">+</span>
 									<span class="about__counter-desc">gray hairs</span>
 								</div>

@@ -85,6 +85,9 @@
     border-start-start-radius: 10px;
     border-start-end-radius: 10px;
     height: 250px;
+    @include mobile {
+        height: 160px;
+    }
 }
 
 .project__link {
