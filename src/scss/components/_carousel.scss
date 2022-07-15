@@ -27,6 +27,7 @@
     width: 470px;
     height: max-content;
     @include tablet {
+        margin: 0 auto;
         width: 40%;
     }
     @include mobile {

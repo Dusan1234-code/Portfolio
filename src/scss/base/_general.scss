@@ -21,7 +21,9 @@ html {
 }
 
 .body.body--scrollDisabled .main-page {
-    filter: blur(7px);
+    @include tablet {
+        filter: blur(7px);
+    }
 }
 
 .container {

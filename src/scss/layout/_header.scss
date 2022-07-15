@@ -55,7 +55,7 @@
     position: relative;
     @include tablet {
         flex-direction: column;
-        gap: 30px;
+        gap: 0;
     }
     &::before {
         @include desktop {
@@ -69,11 +69,19 @@
     }
 }
 
+.header__item:last-child {
+    .header__link {
+        margin-bottom: 0;
+    }
+}
+
 .header__link,
 .header__list:visited {
     color: $myWhite;
     text-transform: lowercase;
     position: relative;
+    margin: 0 20px;
+    display: inline-block;
     &:hover:after {
         @include desktop {
             content: "";
@@ -88,14 +96,9 @@
             animation: headerBorder 0.4s;
         }
     }
-    &:first-child {
-        margin-left: 20px;
-    }
-    &:last-child {
-        margin-right: 20px;
-    }
     @include tablet {
         color: $myGray;
+        margin-bottom: 20px;
     }
 }
 

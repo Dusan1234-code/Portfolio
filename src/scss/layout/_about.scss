@@ -2,6 +2,10 @@
     padding-bottom: 60px;
 }
 
+.about__heading {
+    margin-bottom: 10px;
+}
+
 .about__content {
     display: flex;
     justify-content: space-between;
@@ -14,20 +18,17 @@
     }
 }
 
-.about__heading {
-    @include mobile {
-        margin-bottom: 0;
-    }
-}
-
 .about__img-wrapper {
     flex-basis: 50%;
     position: relative;
+    margin-bottom: 20px;
     .about__img {
-        height: 420px;
         transform: scaleX(-1);
         @include mobile {
-            height: 240px;
+            height: 220px;
+            width: 200px;
+            flex-basis: 100%;
+            transform: scaleX(1);
         }
     }
 }
@@ -35,6 +36,7 @@
 .about__text-wrapper {
     flex-basis: 50%;
     @include mobile {
+        flex-basis: 100%;
         font-size: 16px;
     }
 }

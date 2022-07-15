@@ -127,7 +127,9 @@
         transition: .4s;
     }
     &:hover::before {
-        width: 100%;
+        @include desktop {
+            width: 100%;
+        }
     }
     &:active {
         transform: translateY(1px);

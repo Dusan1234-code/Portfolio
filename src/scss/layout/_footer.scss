@@ -1,0 +1,15 @@
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.footer__out {
+    font-size: 12px;
+    color: $myLightGray;
+}
+
+.footer__link,
+.footer__link:visited {
+    color: $myLightGray;
+}

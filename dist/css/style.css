@@ -99,9 +99,11 @@ html {
   overflow: hidden;
 }
 
-.body.body--scrollDisabled .main-page {
-  -webkit-filter: blur(7px);
-          filter: blur(7px);
+@media (max-width: 1140px) {
+  .body.body--scrollDisabled .main-page {
+    -webkit-filter: blur(7px);
+            filter: blur(7px);
+  }
 }
 
 .container {
@@ -851,7 +853,7 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 30px;
+    gap: 0;
   }
 }
 @media (min-width: 1140px) {
@@ -883,11 +885,17 @@ html {
   }
 }
 
+.header__item:last-child .header__link {
+  margin-bottom: 0;
+}
+
 .header__link,
 .header__list:visited {
   color: #fff;
   text-transform: lowercase;
   position: relative;
+  margin: 0 20px;
+  display: inline-block;
 }
 @media (min-width: 1140px) {
   .header__link:hover:after,
@@ -906,18 +914,11 @@ html {
             animation: headerBorder 0.4s;
   }
 }
-.header__link:first-child,
-.header__list:visited:first-child {
-  margin-left: 20px;
-}
-.header__link:last-child,
-.header__list:visited:last-child {
-  margin-right: 20px;
-}
 @media (max-width: 1140px) {
   .header__link,
 .header__list:visited {
     color: rgb(66, 66, 66);
+    margin-bottom: 20px;
   }
 }
 
@@ -974,7 +975,6 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1065,7 +1065,8 @@ html {
 @media (max-width: 820px) {
   .main__picture {
     height: 200px;
-    width: 80%;
+    width: 140px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1090,6 +1091,10 @@ html {
 
 .about {
   padding-bottom: 60px;
+}
+
+.about__heading {
+  margin-bottom: 10px;
 }
 
 .about__content {
@@ -1117,25 +1122,24 @@ html {
   }
 }
 
-@media (max-width: 820px) {
-  .about__heading {
-    margin-bottom: 0;
-  }
-}
-
 .about__img-wrapper {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   position: relative;
+  margin-bottom: 20px;
 }
 .about__img-wrapper .about__img {
-  height: 420px;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 @media (max-width: 820px) {
   .about__img-wrapper .about__img {
-    height: 240px;
+    height: 220px;
+    width: 200px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 
@@ -1145,6 +1149,8 @@ html {
 }
 @media (max-width: 820px) {
   .about__text-wrapper {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     font-size: 16px;
   }
 }
@@ -1496,9 +1502,11 @@ html {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-.contact__btn:hover::before,
+@media (min-width: 1140px) {
+  .contact__btn:hover::before,
 .contact__btn:visited:hover::before {
-  width: 100%;
+    width: 100%;
+  }
 }
 .contact__btn:active,
 .contact__btn:visited:active {
@@ -1534,6 +1542,26 @@ html {
 .contact:visited {
     font-size: 48px;
   }
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 14px;
+}
+
+.footer__out {
+  font-size: 12px;
+  color: #C4C4C4;
+}
+
+.footer__link,
+.footer__link:visited {
+  color: #C4C4C4;
 }
 
 .project {
@@ -1580,6 +1608,7 @@ html {
 }
 @media (max-width: 1140px) {
   .project__card {
+    margin: 0 auto;
     width: 40%;
   }
 }
@@ -1758,8 +1787,8 @@ iconfont Webfont
 */
 @font-face {
   font-family: "iconfont";
-  src: url("../fonts/iconfont.eot?1657812279678");
-  src: url("../fonts/iconfont.eot?#iefix-1657812279678") format("embedded-opentype"), url("../fonts/iconfont.woff2?1657812279678") format("woff2"), url("../fonts/iconfont.woff?1657812279678") format("woff"), url("../fonts/iconfont.ttf?1657812279678") format("truetype");
+  src: url("../fonts/iconfont.eot?1657894407577");
+  src: url("../fonts/iconfont.eot?#iefix-1657894407577") format("embedded-opentype"), url("../fonts/iconfont.woff2?1657894407577") format("woff2"), url("../fonts/iconfont.woff?1657894407577") format("woff"), url("../fonts/iconfont.ttf?1657894407577") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
