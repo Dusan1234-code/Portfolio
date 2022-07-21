@@ -50,7 +50,7 @@
 			</div>
 		</header>
 		<main class="main-page">
-			<section class="main js-main">
+			<section class="main js-main" id="main">
 				<div class="main__container container">
 					<h1 class="main__heading">
 						<span class="main__hello">Hello,</span> 
@@ -86,14 +86,14 @@
 							<p class="about__text effects">
 								Codding side effects:
 							</p>
-							<div class="about__box-wrapper">
+							<div class="about__box-wrapper js-about-wrapper">
 								<div class="about__box">
-									<span class="about__counter" data-target="15"></span>
+									<span class="about__counter js-about-counter" data-target="15"></span>
 									<span class="plus">+</span>
 									<span class="about__counter-desc">gray hairs</span>
 								</div>
 								<div class="about__box">
-									<span class="about__counter" data-target="100"></span>
+									<span class="about__counter js-about-counter" data-target="100"></span>
 									<span class="plus">+</span>
 									<span class="about__counter-desc">hours on Stackoverflow</span>
 								</div>
@@ -113,7 +113,7 @@
 								<span class="development__box-college">
 									Vega IT
 								</span>
-								<span class="development__box-city">Novi Sad,Serbia | May 2022</span>
+								<span class="development__box-city">Novi Sad, Serbia | May 2022</span>
 								<p class="development__box-text">
 									Worked with a mentor for 3 weeks. Learned to use gulp and create multiple tasks. Raising awareness about HTML semantics, performance, and accessibility of the website. Implementing plugins was part of the internship also. Looking at the bigger picture while developing (example: caring about people with disabilities who are visiting website)
 								</p>
@@ -123,14 +123,14 @@
 							<h3 class="development__box-heading section-subheading">
 								Education
 							</h3>
-							<div class="developemnt__box content timeline">
+							<div class="developemnt__box content timeline js-timeline">
 								<h4 class="development__box-subheading circle">
 									Advanced Frontend Develoment
 								</h4>
 								<span class="development__box-college">
 									FTN Informatika
 								</span>
-								<span class="development__box-city">Novi Sad, Serbia | November 2021 - May 2022</span>
+								<span class="development__box-city js-city">Novi Sad, Serbia | November 2021 - May 2022</span>
 								<p class="development__box-text">
 									Final test result on course was 86%. Learned about:
 								</p>
@@ -150,7 +150,7 @@
 							<div class="developemnt__box">
 								<h4 class="development__box-subheading circle">Bachelor in engineering management</h4>
 								<span class="development__box-college">Faculty of Technical Science</span>
-								<span class="development__box-city">Novi Sad, Serbia | October 2021</span>
+								<span class="development__box-city">Novi Sad, Serbia | September 2016 - October 2021</span>
 								<p class="development__box-text">
 									The studies included acquiring a combination of engineering and managerial knowledge. We mostly worked on adopting and improving knowledge in the field of planning, organizing, managing, and improving business processes, through the application of e-business and information and communication technologies.In the last year of my studies, I chose the Information Management module, where the focus was on acquiring knowledge about OOP, Backend, Frontend development and databases.
 								</p>
@@ -328,17 +328,16 @@
 		</main>
 		<footer>
 			<div class="footer__container container">
-				<p class="footer__developer">Designed & Built by Dusan Gacesa</p>
-				<div class="footer__content">
-					<p class="footer__copy">
-						&copy;<span class="time"></span>
-						All Rights Reserved
-					</p>
-					<p class="footer__out">
-						Thanks to <a class="footer__link" href="http://www.freepik.com" target="_blank">catalyststuff</a> for astronauts
-					</p>
-				</div>
-				
+			  <p class="footer__developer">Designed & Built by Dusan Gacesa</p>
+			  <div class="footer__content">
+				<p class="footer__copy">
+				  &copy;<span class="js-time"></span>
+				  All Rights Reserved
+				</p>
+				<p class="footer__out">
+				  Thanks to <a class="footer__link" href="http://www.freepik.com" target="_blank">catalyststuff</a> for astronauts
+				</p>
+			  </div>
 			</div>
 		</footer>
 	</div>

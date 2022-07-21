@@ -8,7 +8,7 @@
     align-items: flex-start;
     gap: 20px;
     @include mobile {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .development__wrapper:first-child {
         flex-basis: 45%;
@@ -73,6 +73,10 @@
 
 .timeline {
     position: relative;
+    &.fulling::before {
+        animation: lineLoading 3s;
+        bottom: 0;
+    }
     &::before {
         content: "";
         display: inline-block;
@@ -80,7 +84,6 @@
         width: 3px;
         top: 0;
         left: 0;
-        bottom: 0;
         right: 0;
         background-color: $myBlue;
     }

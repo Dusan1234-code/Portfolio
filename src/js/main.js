@@ -12,8 +12,12 @@ let prev = document.querySelector(".js-prev");
 let next = document.querySelector(".js-next");
 let prevSpan = document.querySelector(".js-prev-span");
 let nextSpan = document.querySelector(".js-next-span");
-let counters = document.querySelectorAll(".about__counter");
+let counters = document.querySelectorAll(".js-about-counter");
 let media = window.matchMedia("(min-width: 1140px)");
+const aboutWrapper = document.querySelector(".js-about-wrapper");
+let timeline = document.querySelector(".js-timeline");
+const development = document.querySelector(".js-city");
+
 
 // LOADER ANIMATION
 document.onreadystatechange = function () {
@@ -22,10 +26,13 @@ document.onreadystatechange = function () {
          document.querySelector('.content').style.display="none";
          body.classList.add("loader-b");
     } else if (state == 'complete') {
-           document.querySelector('.loader').style.display="none";
+        setTimeout(() => {
+            document.querySelector('.loader').style.display="none";
            document.querySelector('.content').style.display="block";
            typeWritter();
            body.classList.remove("loader-b");
+        }, 1500);
+           
     }
 }
 
@@ -70,7 +77,7 @@ navLinks.forEach((link)=>{
     })
 })
 
-// WRITTING ANIMATION
+// TYPING ANIMATION
 let messageArray = ["Frontened developer"];
 let textPosition = 0;
 typeWritter = () => {
@@ -79,15 +86,12 @@ typeWritter = () => {
         setTimeout(typeWritter, 100)
     }
 }
-// window.addEventListener("load",()=> typeWritter());
 
 // ARROW TO TOP
 arrowToTop.addEventListener("click",()=>{
     window.scrollTo(0,0);
 })
-option = {threshold: 0};
-
-const observer = new IntersectionObserver(function(entries){
+const observer = new IntersectionObserver(entries=>{
     const ent = entries[0];
     if(!ent.isIntersecting) {
         arrowToTop.classList.add("arrow-visible");
@@ -95,16 +99,16 @@ const observer = new IntersectionObserver(function(entries){
     if(ent.isIntersecting) {
         arrowToTop.classList.remove("arrow-visible");
     }
-}, option)
+}, {
+    root: null,
+    threshold:0
+})
 observer.observe(main);
 
 // NUMBER COUNTER 
-let about = document.getElementById("about");
 let speed = 80;
-let optionTwo = {root:null,threshold: 0.8};
-
 const observerTwo = new IntersectionObserver((entries) => {
-    let entry = entries[0];
+    const entry = entries[0];
     if(entry.isIntersecting) {
         counters.forEach((counter)=>{
             counter.innerText = "0";
@@ -112,21 +116,29 @@ const observerTwo = new IntersectionObserver((entries) => {
               const target = +counter.getAttribute("data-target");
               const c = +counter.innerText;
               const increment = target / speed;
-              if(c < target){
+              if(c < target) {
                 counter.innerText = `${Math.ceil(c + increment)}`;
-                setTimeout(updateNumber, 90);
+                setTimeout(updateNumber, 120);
               }
             }
             updateNumber();
-            observerTwo.unobserve(about);
+            observerTwo.disconnect();
         })
     }
-}, optionTwo)
-observerTwo.observe(about);
+}, {
+    threshold: 1
+})
+observerTwo.observe(aboutWrapper);
 
-// COUNTER 
-
-
-
-
-
+// LINE FULLING
+const observerLine = new IntersectionObserver((views)=>{
+    const view = views[0];
+    if(view.isIntersecting) {
+        timeline.classList.add("fulling");
+        observerLine.unobserve(development);
+    }  
+}, {
+    root:null,
+    threshold: 1
+})
+observerLine.observe(development)
