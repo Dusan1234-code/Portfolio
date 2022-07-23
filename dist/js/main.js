@@ -1,1 +1,143 @@
-let hamburger=document.querySelector(".js-hamburger"),header=document.querySelector(".js-header"),message=document.querySelector(".js-job"),body=document.querySelector(".js-body"),navLinks=document.querySelectorAll(".js-header-link"),arrowToTop=document.querySelector(".js-arrow"),gmailBtn=document.querySelector(".js-gmail"),main=document.querySelector(".js-main"),socialHeading=document.querySelector(".js-social");const productContainers=[...document.querySelectorAll(".js-project-wrapper")];let prev=document.querySelector(".js-prev"),next=document.querySelector(".js-next"),prevSpan=document.querySelector(".js-prev-span"),nextSpan=document.querySelector(".js-next-span"),counters=document.querySelectorAll(".js-about-counter"),media=window.matchMedia("(min-width: 1140px)");const aboutWrapper=document.querySelector(".js-about-wrapper");let timeline=document.querySelector(".js-timeline");document.onreadystatechange=function(){var e=document.readyState;"interactive"==e?(document.querySelector(".content").style.display="none",body.classList.add("loader-b")):"complete"==e&&setTimeout((()=>{document.querySelector(".loader").style.display="none",document.querySelector(".content").style.display="block",typeWritter(),body.classList.remove("loader-b")}),1500)},media.matches&&productContainers.forEach((e=>{let t=e.getBoundingClientRect().width;prev.addEventListener("click",(()=>{prevSpan.classList.add("disabled"),nextSpan.classList.remove("disabled"),e.scrollLeft-=t})),next.addEventListener("click",(()=>{prevSpan.classList.remove("disabled"),nextSpan.classList.add("disabled"),e.scrollLeft+=t}))})),gmailBtn.addEventListener("click",(()=>{navigator.clipboard.writeText("dusangacesa727@gmail.com"),socialHeading.classList.add("copingMail"),setTimeout((()=>{socialHeading.classList.remove("copingMail")}),2100)})),hamburger.addEventListener("click",(()=>{header.classList.toggle("active"),body.classList.toggle("body--scrollDisabled")})),navLinks.forEach((e=>{e.addEventListener("click",(()=>{header.classList.remove("active"),body.classList.remove("body--scrollDisabled")}))}));let messageArray=["Frontened developer"],textPosition=0;typeWritter=()=>{message.innerHTML=messageArray[0].substring(0,textPosition)+'<span class="blink"></span>',textPosition++!=messageArray[0].length&&setTimeout(typeWritter,100)},arrowToTop.addEventListener("click",(()=>{window.scrollTo(0,0)}));const observer=new IntersectionObserver((e=>{const t=e[0];t.isIntersecting||arrowToTop.classList.add("arrow-visible"),t.isIntersecting&&arrowToTop.classList.remove("arrow-visible")}),{root:null,threshold:0});observer.observe(main);let speed=80;const observerTwo=new IntersectionObserver((e=>{e[0].isIntersecting&&counters.forEach((e=>{e.innerText="0";let t=()=>{const r=+e.getAttribute("data-target"),o=+e.innerText,s=r/speed;o<r&&(e.innerText=`${Math.ceil(o+s)}`,setTimeout(t,120))};t(),observerTwo.disconnect()}))}),{threshold:1});observerTwo.observe(aboutWrapper);const development=document.querySelector(".js-city"),observerLine=new IntersectionObserver((e=>{e[0].isIntersecting&&(timeline.classList.add("fulling"),observerLine.unobserve(development))}),{root:null,threshold:1});observerLine.observe(development);
+"use strict";
+
+let hamburger = document.querySelector(".js-hamburger");
+let header = document.querySelector(".js-header");
+let message = document.querySelector(".js-job");
+let body = document.querySelector(".js-body");
+let navLinks = document.querySelectorAll(".js-header-link");
+let arrowToTop = document.querySelector(".js-arrow");
+let gmailBtn = document.querySelector(".js-gmail");
+let main = document.querySelector(".js-main");
+let socialHeading = document.querySelector(".js-social");
+const productContainers = [...document.querySelectorAll('.js-project-wrapper')];
+let prev = document.querySelector(".js-prev");
+let next = document.querySelector(".js-next");
+let prevSpan = document.querySelector(".js-prev-span");
+let nextSpan = document.querySelector(".js-next-span");
+let counters = document.querySelectorAll(".js-about-counter");
+const aboutWrapper = document.querySelector(".js-about-wrapper");
+let timeline = document.querySelector(".js-timeline");
+const development = document.querySelector(".js-city");
+
+
+// LOADER ANIMATION
+document.onreadystatechange = function () {
+    var state = document.readyState;
+    if (state == 'interactive') {
+         document.querySelector('.content').style.display="none";
+         body.classList.add("loader-b");
+    } else if (state == 'complete') {
+        setTimeout(() => {
+            document.querySelector('.loader').style.display="none";
+           document.querySelector('.content').style.display="block";
+           typeWritter();
+           body.classList.remove("loader-b");
+        }, 1500);
+           
+    }
+}
+
+// CAROUSEL 
+
+productContainers.forEach((item) => {
+    let containerDimension = item.getBoundingClientRect();
+    let containerWidth = containerDimension.width;
+    prev.addEventListener("click",() => {
+        prevSpan.classList.add("disabled");
+        nextSpan.classList.remove("disabled");
+        item.scrollLeft -= containerWidth;
+    })
+    next.addEventListener("click",() => {
+        prevSpan.classList.remove("disabled");
+        nextSpan.classList.add("disabled");
+        item.scrollLeft += containerWidth;
+      })
+})
+ // COPY MAIL
+gmailBtn.addEventListener("click",()=> {
+    navigator.clipboard.writeText("dusangacesa727@gmail.com");
+    socialHeading.classList.add("copingMail");
+    setTimeout(() => {
+        socialHeading.classList.remove("copingMail")
+    }, 2100);
+})
+
+// HAMBURGER MENU OPENS UP/CLOSES
+hamburger.addEventListener("click",()=>{
+    header.classList.toggle("active");
+    body.classList.toggle("body--scrollDisabled");
+})
+
+// NAVLINKS CLOSING 
+navLinks.forEach((link)=>{
+    link.addEventListener("click",()=>{
+        header.classList.remove("active");
+        body.classList.remove("body--scrollDisabled");
+    })
+})
+
+// TYPING ANIMATION
+let messageArray = ["Frontened developer"];
+let textPosition = 0;
+let typeWritter = () => {
+    message.innerHTML = messageArray[0].substring(0, textPosition) + `<span class="blink"></span>`;
+    if(textPosition ++ != messageArray[0].length) {
+        setTimeout(typeWritter, 100)
+    }
+}
+
+// ARROW TO TOP
+arrowToTop.addEventListener("click",()=>{
+    window.scrollTo(0,0);
+})
+const observer = new IntersectionObserver(entries=>{
+    const ent = entries[0];
+    if(!ent.isIntersecting) {
+        arrowToTop.classList.add("arrow-visible");
+    }
+    if(ent.isIntersecting) {
+        arrowToTop.classList.remove("arrow-visible");
+    }
+}, {
+    root: null,
+    threshold:0
+})
+observer.observe(main);
+
+// NUMBER COUNTER 
+let speed = 80;
+const observerTwo = new IntersectionObserver((entries) => {
+    const entry = entries[0];
+    if(entry.isIntersecting) {
+        counters.forEach((counter)=>{
+            counter.innerText = "0";
+            let updateNumber = () => {
+              const target = +counter.getAttribute("data-target");
+              const c = +counter.innerText;
+              const increment = target / speed;
+              if(c < target) {
+                counter.innerText = `${Math.ceil(c + increment)}`;
+                setTimeout(updateNumber, 120);
+              }
+            }
+            updateNumber();
+            observerTwo.disconnect();
+        })
+    }
+}, {
+    threshold: 1
+})
+observerTwo.observe(aboutWrapper);
+
+// LINE FULLING
+const observerLine = new IntersectionObserver((views)=>{
+    const view = views[0];
+    if(view.isIntersecting) {
+        timeline.classList.add("fulling");
+        observerLine.unobserve(development);
+    }  
+}, {
+    root:null,
+    threshold: 1
+})
+observerLine.observe(development)

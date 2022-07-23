@@ -1,3 +1,5 @@
+"use strict";
+
 let hamburger = document.querySelector(".js-hamburger");
 let header = document.querySelector(".js-header");
 let message = document.querySelector(".js-job");
@@ -13,7 +15,6 @@ let next = document.querySelector(".js-next");
 let prevSpan = document.querySelector(".js-prev-span");
 let nextSpan = document.querySelector(".js-next-span");
 let counters = document.querySelectorAll(".js-about-counter");
-let media = window.matchMedia("(min-width: 1140px)");
 const aboutWrapper = document.querySelector(".js-about-wrapper");
 let timeline = document.querySelector(".js-timeline");
 const development = document.querySelector(".js-city");
@@ -37,7 +38,7 @@ document.onreadystatechange = function () {
 }
 
 // CAROUSEL 
-if(media.matches) {
+
 productContainers.forEach((item) => {
     let containerDimension = item.getBoundingClientRect();
     let containerWidth = containerDimension.width;
@@ -51,8 +52,7 @@ productContainers.forEach((item) => {
         nextSpan.classList.add("disabled");
         item.scrollLeft += containerWidth;
       })
-  })
-}
+})
  // COPY MAIL
 gmailBtn.addEventListener("click",()=> {
     navigator.clipboard.writeText("dusangacesa727@gmail.com");
@@ -73,14 +73,13 @@ navLinks.forEach((link)=>{
     link.addEventListener("click",()=>{
         header.classList.remove("active");
         body.classList.remove("body--scrollDisabled");
-
     })
 })
 
 // TYPING ANIMATION
 let messageArray = ["Frontened developer"];
 let textPosition = 0;
-typeWritter = () => {
+let typeWritter = () => {
     message.innerHTML = messageArray[0].substring(0, textPosition) + `<span class="blink"></span>`;
     if(textPosition ++ != messageArray[0].length) {
         setTimeout(typeWritter, 100)

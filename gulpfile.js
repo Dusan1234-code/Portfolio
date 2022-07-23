@@ -8,7 +8,6 @@ const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 
 
-//scss to css task
 gulp.task('scss', ()=> {
 	return gulp.src('src/scss/style.scss')
 		.pipe(sass())
@@ -17,7 +16,7 @@ gulp.task('scss', ()=> {
 		.pipe(browserSync.stream());
 });
 
-//scss lint task
+
 gulp.task('scss-lint', ()=> {
 	return gulp.src('src/scss/*.scss')
 		.pipe(gulpStylelint({
@@ -31,7 +30,6 @@ gulp.task('scss-lint', ()=> {
 });
 
 
-//iconfont task
 gulp.task('iconfont', ()=> {
 	return gulp.src('src/svg/*.svg')
 		.pipe(iconfont({
@@ -55,19 +53,19 @@ gulp.task('iconfont', ()=> {
 		.pipe(gulp.dest('dist/fonts'));
 });
 
-// copy js files to dist
+
 gulp.task('copy-js', ()=> {
 	return gulp.src('src/js/*.js')
 		.pipe(gulp.dest('dist/js'));
 });
 
-// copy html files to dist
+
 gulp.task('copy-html', ()=> {
 	return gulp.src('*.{html,ico}')
 		.pipe(gulp.dest('dist'));
 });
 
-// copy font files to dist
+
 gulp.task('copy-fonts', ()=> {
 	return gulp.src('src/fonts/*.{ttf,woff,woff2,eof}')
 		.pipe(gulp.dest('dist/fonts'));
@@ -79,7 +77,6 @@ gulp.task('copy-assets', ()=> {
 });
 
 
-// browser sync task
 gulp.task('watch', ()=> {
 	browserSync.init({
 		server: {
@@ -95,9 +92,8 @@ gulp.task('watch', ()=> {
 	gulp.watch('src/**/*.js').on('change', browserSync.reload);
 });
 
-//build project
+
 gulp.task('project-build', gulp.series('iconfont', 'copy-assets', 'copy-fonts', 'scss-lint', 'scss', 'copy-js', 'copy-html'));
 
-//to run watch task type: gulp
 gulp.task('default', gulp.series('watch'));
 

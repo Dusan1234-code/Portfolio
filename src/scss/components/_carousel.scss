@@ -4,18 +4,14 @@
     position: relative;
 }
 
+.project__container {
+    overflow: hidden;
+}
+
 .project__wrapper {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    @include tablet {
-        justify-content: center;
-        flex-wrap: wrap;
-        row-gap: 20px;
-    }
-    @include mobile {
-        overflow-x: visible;
-    }
 }
 
 .project__wrapper::-webkit-scrollbar {
@@ -23,27 +19,16 @@
 }
 
 .project__card {
-    flex: 0 0 auto;
-    width: 470px;
-    height: max-content;
-    @include tablet {
-        margin: 0 auto;
-        width: 40%;
+    flex: 0 0 45%;
+    align-self: center;
+    &:nth-child(odd) {
+        margin-right: 10%;
+        @include mobile {
+            margin-right: auto;
+        }
     }
     @include mobile {
-        width: 90%;
-    }
-    &:not(:nth-child(2)){ 
-        margin-right: 75px;
-        @include tablet {
-            margin-right: 30px;
-        }
-    }
-    &:nth-child(2) {
-        margin-right: 75px;
-        @include tablet {
-            margin-right: 30px;
-        }
+        flex-basis: 100%;
     }
 }
 
@@ -64,7 +49,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    padding: 5px;
     border-start-start-radius: 10px;
     border-start-end-radius: 10px;
     background-color: #f0f8ff;
@@ -83,8 +67,6 @@
 
 .project__img {
     transition: transform .4s;
-    border-start-start-radius: 10px;
-    border-start-end-radius: 10px;
     height: 250px;
     @include mobile {
         height: 160px;
@@ -120,11 +102,12 @@
 }
 
 .project__card-text {
+    display: inline-block;
     font-size: 16px;
+    margin-top: auto;
 }
 
 .project__btn {
-    @include desktop {
         display: inline-block;
         border-radius: 50%;
         margin-top: 20px;
@@ -149,12 +132,10 @@
                 opacity: .5;
             }
         }
-    }
 }
 
 .next::after,
 .prev::after {
-    @include desktop {
         content: '';
         display: inline-block;
         position: absolute;
@@ -164,7 +145,6 @@
         height: 1.4em;
         border-top: 5px solid $myBlue;
         border-right: 5px solid $myBlue;
-    }
 } 
 
 .next::after {
