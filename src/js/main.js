@@ -16,6 +16,7 @@ let prevSpan = document.querySelector(".js-prev-span");
 let nextSpan = document.querySelector(".js-next-span");
 let counters = document.querySelectorAll(".js-about-counter");
 const aboutWrapper = document.querySelector(".js-about-wrapper");
+const MEDIAMOBILE = window.matchMedia("(max-width: 820px)");
 let timeline = document.querySelector(".js-timeline");
 const development = document.querySelector(".js-city");
 
@@ -38,21 +39,47 @@ document.onreadystatechange = function () {
 }
 
 // CAROUSEL 
-
 productContainers.forEach((item) => {
+    let numbOfProjects = item.children.length;
     let containerDimension = item.getBoundingClientRect();
     let containerWidth = containerDimension.width;
+    prev.disabled = true;
+    let click = 0;
     prev.addEventListener("click",() => {
-        prevSpan.classList.add("disabled");
-        nextSpan.classList.remove("disabled");
         item.scrollLeft -= containerWidth;
+        click--;
+        if(MEDIAMOBILE.matches){
+            if(click == 0) {
+                prev.disabled = true;
+            } 
+            if(click <= numbOfProjects - 2) {
+                next.disabled = false;
+            }
+            else {
+                prev.disabled = false;
+            }
+        } else {
+            prev.disabled = true;
+            next.disabled = false;
+        }
     })
     next.addEventListener("click",() => {
-        prevSpan.classList.remove("disabled");
-        nextSpan.classList.add("disabled");
         item.scrollLeft += containerWidth;
+        click++;
+        if(MEDIAMOBILE.matches){
+            if(click == numbOfProjects - 1) {
+                next.disabled = true;
+            } else {
+                prev.disabled = false;
+                next.disabled = false;
+            }
+        } else {
+            next.disabled = true;
+            prev.disabled = false;
+        }
       })
 })
+
  // COPY MAIL
 gmailBtn.addEventListener("click",()=> {
     navigator.clipboard.writeText("dusangacesa727@gmail.com");
