@@ -765,12 +765,14 @@ html {
 }
 @-webkit-keyframes lineLoading {
   0% {
-    bottom: 540px;
     opacity: 0;
+  }
+  10% {
+    bottom: 540px;
+    opacity: 0.7;
   }
   30% {
     bottom: 520px;
-    opacity: 0.7;
   }
   50% {
     bottom: 450px;
@@ -788,12 +790,14 @@ html {
 }
 @keyframes lineLoading {
   0% {
-    bottom: 540px;
     opacity: 0;
+  }
+  10% {
+    bottom: 540px;
+    opacity: 0.7;
   }
   30% {
     bottom: 520px;
-    opacity: 0.7;
   }
   50% {
     bottom: 450px;
@@ -1355,8 +1359,10 @@ html {
   position: relative;
 }
 .timeline.fulling::before {
-  -webkit-animation: lineLoading 3s;
-          animation: lineLoading 3s;
+  -webkit-animation: lineLoading 6s;
+          animation: lineLoading 6s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
   bottom: 0;
 }
 .timeline::before {
@@ -1639,18 +1645,15 @@ html {
   position: relative;
 }
 
-.project__container {
-  overflow: hidden;
-}
-
 .project__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
 }
-
 .project__wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -1659,8 +1662,8 @@ html {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 45%;
           flex: 0 0 45%;
-  -ms-flex-item-align: center;
-      align-self: center;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .project__card:nth-child(odd) {
   margin-right: 10%;
@@ -1672,8 +1675,9 @@ html {
 }
 @media (max-width: 820px) {
   .project__card {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
   }
 }
 
@@ -1689,11 +1693,8 @@ html {
 
 .project__img-box {
   position: relative;
-  width: 100%;
-  height: 100%;
+  padding: 5px;
   overflow: hidden;
-  border-start-start-radius: 10px;
-  border-start-end-radius: 10px;
   background-color: #f0f8ff;
 }
 @media (min-width: 1140px) {
@@ -1754,8 +1755,6 @@ html {
 
 .project__card-content {
   padding: 10px;
-  border-end-start-radius: 10px;
-  border-end-end-radius: 10px;
   background-color: #f0f8ff;
 }
 
@@ -1775,34 +1774,32 @@ html {
   border-radius: 50%;
   margin-top: 20px;
   cursor: pointer;
-  width: 5em;
-  height: 4em;
+  width: 55px;
+  height: 55px;
+  border: 2px solid #67BDFF;
+  margin-right: 20px;
+}
+@media (min-width: 1140px) {
+  .project__btn:hover {
+    background-color: #67BDFF;
+  }
+  .project__btn:hover .next::after, .project__btn:hover .prev::after {
+    border-top: 0.5em solid #fff;
+    border-right: 0.5em solid #fff;
+  }
 }
 .project__btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.project__btn .project__spn {
+
+.project__spn {
   display: inline-block;
   width: 100%;
   height: 100%;
-  border: 2px solid #67BDFF;
-  border-radius: 50%;
-  margin-right: 1.5em;
   position: relative;
 }
-@media (min-width: 1140px) {
-  .project__btn .project__spn:hover {
-    background-color: #67BDFF;
-  }
-  .project__btn .project__spn:hover::after {
-    border-top: 0.5em solid #fff;
-    border-right: 0.5em solid #fff;
-  }
-}
-
-.next::after,
-.prev::after {
+.project__spn::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -1829,8 +1826,8 @@ iconfont Webfont
 */
 @font-face {
   font-family: "iconfont";
-  src: url("../fonts/iconfont.eot?1658257205361");
-  src: url("../fonts/iconfont.eot?#iefix-1658257205361") format("embedded-opentype"), url("../fonts/iconfont.woff2?1658257205361") format("woff2"), url("../fonts/iconfont.woff?1658257205361") format("woff"), url("../fonts/iconfont.ttf?1658257205361") format("truetype");
+  src: url("../fonts/iconfont.eot?1658834105318");
+  src: url("../fonts/iconfont.eot?#iefix-1658834105318") format("embedded-opentype"), url("../fonts/iconfont.woff2?1658834105318") format("woff2"), url("../fonts/iconfont.woff?1658834105318") format("woff"), url("../fonts/iconfont.ttf?1658834105318") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

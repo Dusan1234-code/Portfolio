@@ -70,11 +70,11 @@
     }
 }
 
-
 .timeline {
     position: relative;
     &.fulling::before {
-        animation: lineLoading 3s;
+        animation: lineLoading 6s;
+        animation-fill-mode: backwards;
         bottom: 0;
     }
     &::before {

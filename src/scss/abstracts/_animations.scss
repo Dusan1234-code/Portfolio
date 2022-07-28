@@ -99,13 +99,15 @@
 
 @keyframes lineLoading {
     0% {
-        bottom: 540px;
         opacity: 0;
+    }
+    10% {
+        bottom: 540px;
+        opacity: .7;
     }
 
     30% {
         bottom: 520px;
-        opacity: .7;
     }
 
     50% {

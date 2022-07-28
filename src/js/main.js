@@ -34,7 +34,6 @@ document.onreadystatechange = function () {
            typeWritter();
            body.classList.remove("loader-b");
         }, 1500);
-           
     }
 }
 
