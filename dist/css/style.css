@@ -1780,10 +1780,10 @@ html {
   margin-right: 20px;
 }
 @media (min-width: 1140px) {
-  .project__btn:hover {
+  .project__btn:hover:not(:disabled) {
     background-color: #67BDFF;
   }
-  .project__btn:hover .next::after, .project__btn:hover .prev::after {
+  .project__btn:hover:not(:disabled) .next::after, .project__btn:hover:not(:disabled) .prev::after {
     border-top: 0.5em solid #fff;
     border-right: 0.5em solid #fff;
   }

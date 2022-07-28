@@ -108,7 +108,7 @@
     height: 55px;
     border: 2px solid $myBlue;
     margin-right: 20px;
-    &:hover {
+    &:hover:not(:disabled) {
         @include desktop {
             background-color: $myBlue;
             & .next::after,
