@@ -73,19 +73,20 @@
 .timeline {
     position: relative;
     &.fulling::before {
-        animation: lineLoading 6s;
-        animation-fill-mode: backwards;
-        bottom: 0;
+        transform: scaleY(1);
     }
     &::before {
         content: "";
         display: inline-block;
         position: absolute;
         width: 3px;
+        height: 100%;
+        background-color: $myBlue;
         top: 0;
         left: 0;
-        right: 0;
-        background-color: $myBlue;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 5s .4s;
     }
 }
 

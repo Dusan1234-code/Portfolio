@@ -91,38 +91,11 @@
     50% {
         opacity: .5;
     }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-@keyframes lineLoading {
-    0% {
-        opacity: 0;
-    }
-    10% {
-        bottom: 540px;
-        opacity: .7;
-    }
-
-    30% {
-        bottom: 520px;
-    }
-
-    50% {
-        bottom: 450px;
-    }
-
-    60% {
-        bottom: 380px;
-    }
-
     80% {
-        bottom: 190px;
+        opacity: .8;
     }
     100% {
-        bottom: 0;
         opacity: 1;
     }
 }
+
