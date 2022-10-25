@@ -40,11 +40,11 @@ document.onreadystatechange = function () {
 // CAROUSEL 
 productContainers.forEach((item) => {
     let numbOfProjects = item.children.length;
-    let containerDimension = item.getBoundingClientRect();
-    let containerWidth = containerDimension.width;
     prev.disabled = true;
     let click = 0;
     prev.addEventListener("click",() => {
+        let containerDimension = item.getBoundingClientRect();
+        let containerWidth = containerDimension.width;
         item.scrollLeft -= containerWidth;
         click--;
         if(MEDIAMOBILE.matches){
@@ -63,6 +63,8 @@ productContainers.forEach((item) => {
         }
     })
     next.addEventListener("click",() => {
+        let containerDimension = item.getBoundingClientRect();
+        let containerWidth = containerDimension.width;
         item.scrollLeft += containerWidth;
         click++;
         if(MEDIAMOBILE.matches){
